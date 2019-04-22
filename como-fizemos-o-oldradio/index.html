@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Como fizemos o oldRadio? // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Como fizemos o oldRadio?</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_m6wxcmvAt21qe3219.jpg)"></div>
+      <h2 class="post-subtitle">Jul 19, 2012</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <!-- <p class="demo-download"><a href="https://developer.mozilla.org/pt-BR/demos/detail/old-radio/launch" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325lvHwF1qe3219.png"/></a> <a href="https://github.com/HTML5-Pro/oldRadio/" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325u7HMG1qe3219.png"/></a> -->
+<p>Nos dois últimos eventos que nós (Zeno Rocha e Bernard de Luna) estivemos presentes (TDC 2012 em São Paulo e Front in BH em Minas Gerais), fizemos questão de apresentar nosso primeiro experimento juntos, o <a href="https://developer.mozilla.org/pt-BR/demos/detail/old-radio/launch">Old Radio</a>, que figura hoje na galeria <a href="https://developer.mozilla.org/pt-BR/demos/detail/old-radio/launch">Mozilla Demo Studios</a>.</p>
+<p>Infelizmente o outro criador Zanoni Miranda não pode estar presente, mas sua presença na equipe foi importantíssima e sempre fizemos questão de citá-lo.</p>
+<p>Muitas pessoas nos abordaram com perguntas sobre como fizemos funcionalidade X ou Y, por isso hoje vamos passar pela produção desde o CSS até o JavaScript.</p>
+<!-- more -->
+<p><img src="http://media.tumblr.com/tumblr_m6wx0uXPdG1qe3219.jpg" alt=""></p>
+<h2 id="marca-o-e-estiliza-o">Marcação e Estilização</h2>
+<p>Para criar a marcação HTML do Old Radio, o Bernard De Luna seguiu o mesmo conceito de modularização. Ou seja, seguindo heranças de profundidades entre os itens, estilização baseada em classes e não em heranças, e por fim, nome de classes focadas nas funcionalidades reais. A ideia foi seguir a mesma estratégia usada para a criação do <a href="https://developer.mozilla.org/pt-BR/demosdetail/pure-css3-homer">Homer Simpsons</a>. Para ilustrar isso, segue o código de como foi feito a chave de desligar e ligar o rádio:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"power"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"on-off active"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"on / off"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>on / off<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p>Trabalhar com uma boa hierarquia nos dá a capacidade de usar um conceito nativo do DOM que é a máscara. Ou seja, podemos ativar ou não através do “position” o limite da largura do pai em relação ao filho. Isso foi amplamente utilizado no Old Radio, principalmente quando chegamos ao visor.</p>
+<p>A partir daí seguimos um outro conceito que poucos ainda utilizam quando se trata de CSS3, a combinação do RGBa. Assim fizemos algumas aplicações, mostradas abaixo:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f6uqMHa21qe3219.jpg" alt=""></p>
+<p>O degradê que utilizamos para fazer o Efeito de Dourado foi o mesmo utilizado para criar o conceito de profundidade entre o case do rádio, ou seja, sempre pegando a cor marrom, amarela, preta, o que for e escurecendo em degradê. É uma ótima utilização do RGBa e ainda tem uma outra vantagem, que não foi utilizada nesse projeto, mas que vale a dica: as animações CSS funcionam para “background-color”, mas não imagem, pelo degradê renderizar como se fosse “background-image”, ele acaba não sendo animado. A partir do momento que o degradê inclui opacidade, você pode alterar apenas as cores, funcionando o transition e animation. Legal né?</p>
+<p>O que trás a ideia de realidade para o projeto é puramente percepção, assim sendo, foram feitas algumas pesquisas referenciais de um rádio velho, ajudou muito ma hora de achar o tom das cores e estilo que seria desenhado. Confiram algumas das referências usadas:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f6wvX31O1qe3219.jpg" alt=""></p>
+<p>Mas sem dúvida a que norteou todo o projeto, com cores, estilo foi essa imagem abaixo:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f6xz24WI1qe3219.jpg" alt=""></p>
+<p>Através dessa referência, pudemos pegar o tom de cor da madeira e do dourado. Comparando com o Old Radio, fica bem claro a importância dessa referência pela palheta que indica a estação, o STEREO e o estilo do Tunner. Dessa referência fomos direto para o código, sem nenhum protótipo, nem layout em PSD.</p>
+<p>Vale lembrar que o Old Radio surgiu logo após a ideia do Bernard De Luna de ter criado o Homer Simpsons só com CSS, para quem não conhece, ficou assim:</p>
+<p><a href="https://developer.mozilla.org/pt-BR/demosdetail/pure-css3-homer"><img src="http://media.tumblr.com/tumblr_m7f713gTC71qe3219.jpg" alt=""></a></p>
+<p>Se o De Luna, Bernard, Bê, rei, absoluto, lindo, desculpem, me emocionei&#8230;, bom, se ele seguisse a risca o modelo de estilização utilizado no Homer, muito provavelmente o Old Radio ficasse assim:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f71xL0q31qe3219.jpg" alt=""></p>
+<p>Ficaria bonito, mas sem peso, sem realismo, novamente o RGBa aplicado em &quot;box-shadow&quot;, &quot;gradient&quot;, &quot;text-shadow&quot;, &quot;border&quot; e &quot;background&quot; foram responsáveis pelo tom de profundidade, textura e realismo esperado e atingido no Old Radio.</p>
+<p>Por fim, vale explicar duas texturas utilizadas no rádio que fogem um pouco da aplicação normal, através do &quot;repeating-linear-gradient&quot;.</p>
+<h2 id="textura-de-madeira">Textura de madeira</h2>
+<p>Para fazer a textura de madeira, utilizamos a seguinte expressão:</p>
+<pre><code class="hljs">repeating-linear-gradient(-<span class="hljs-number">90</span>deg, rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>), rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.1</span>) <span class="hljs-number">1</span>px, transparent <span class="hljs-number">3</span>px);</code></pre>
+
+<p>Ainda é uma renderização bastante bugada em browsers, mas mesmo com pequenas distorções ou o que renderizar, daria um ruído no marrom, mantendo a impressão da madeira desejada.</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f7lw4bwO1qe3219.jpg" alt=""></p>
+<h2 id="esta-es-da-r-dio">Estações da rádio</h2>
+<p>As estações dentre todos os objetos e dificuldades para se desenhar o Rádio foi a que mais me satisfez, pois não fazia ideia como conseguir atingir os &quot;palitos&quot; da frequência, o CSS me mostrou estar mais adiantado do que eu imaginava e consegui fazer isso com uma única marcação HTML e utilizando o &quot;linear-gradient&quot; combinado com o &quot;background-size&quot;.</p>
+<pre><code class="hljs">background-image: linear-gradient(<span class="hljs-number">0</span>, rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">1</span>) <span class="hljs-number">1</span>px, transparent <span class="hljs-number">1</span>px), linear-gradient(<span class="hljs-number">0</span>, rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">.3</span>) <span class="hljs-number">1</span>px, transparent <span class="hljs-number">1</span>px);
+background-size: <span class="hljs-number">25</span>px <span class="hljs-number">50</span>px, <span class="hljs-number">5</span>px <span class="hljs-number">5</span>px;
+background-position:-<span class="hljs-number">24</span>px bottom, -<span class="hljs-number">24</span>px bottom;
+background-repeat: repeat-x;</code></pre>
+
+<p>Vamos explicar rapidamente:</p>
+<pre><code class="hljs">linear-gradient(<span class="hljs-number">0</span>, rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">1</span>) <span class="hljs-number">1</span>px, transparent <span class="hljs-number">1</span>px)</code></pre>
+
+<p>Estou usando degradê do branco para o transparente (sendo 1px para o branco e 1px para o transparente).</p>
+<pre><code class="hljs">linear-gradient(<span class="hljs-number">0</span>, rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">.3</span>) <span class="hljs-number">1</span>px, transparent <span class="hljs-number">1</span>px)</code></pre>
+
+<p>Estou usando outro degradê do branco com 30% de transparencia para o transparente (sendo 1px para o branco e 1px para o transparente).</p>
+<p>Agora vem a mágica, eu aplico &quot;background-size&quot; para manipular o tamanho desses degradês, dizendo que o primeiro ocupa 25px de largura e 50px de altura, enquanto o segundo ocupa 5px e 5px. O interessante é a conta feita, pois assim eu garanto que a cada 5 palitos brancos de 30% apareça 1 palito branco 100%. Reparem no desenho:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f74aoSDw1qe3219.jpg" alt=""></p>
+<p>Por fim, desloquei os degradês 24px para esquerda para poder marcar o começo das estações com o primeiro palito, e alinhei verticalmente &quot;bottom&quot;. Finalizando com um &quot;repeat-x&quot; para que os traços se repitam e temos essa lindeza aí:</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f75yc6pz1qe3219.jpg" alt=""></p>
+<p>Só faltava fazê-lo funcionar não é verdade? Sente como fizemos isso&#8230;</p>
+<h2 id="html5-audio-api">HTML5 Audio API</h2>
+<p>Para colocar o rádio para tocar, nada de Flash! Usamos a API de áudio do HTML5. A lista de músicas foi criada dinâmicamente e então utilizamos as funções da API para manipularmos os eventos de play/pause e aumentar/diminuir o volume do som.</p>
+<h2 id="jquery-vs-yui">jQuery vs YUI</h2>
+<p>No início do projeto optamos pelo jQuery para manipular elementos do DOM de maneira mais simples, porém os recentes estudos que o Zeno estava fazendo em cima do YUI no dia anterior ao lançamento fizeram com que, em uma manhã de sábado na qual tinha viajado para São Paulo, lhe desse a louca de reescrever tudo usando YUI.</p>
+<p>Apesar de volumosa, realizar essa mudança não foi dramático. Um guia em especial o ajudou nessa missão: <a href="http://www.jsrosettastone.com/">jQuery - YUI3 Rosseta Stone</a>.</p>
+<p>Vale ressaltar que essa decisão não teve nada a ver com algum benefício que o YUI tem sobre o jQuery (que por sinal são muitos), até porque o único módulo usado para isso foi o &quot;node&quot; do YUI que realiza as mesmas coisas que o jQuery. Foi apenas curiosidade.</p>
+<h2 id="konami-code">Konami Code</h2>
+<p>Uma das brincadeiras que resolvemos aplicar foi uma surpresa para aqueles que fizessem o famoso Konami Code, macete conhecido dos nerds nos jogos antigos para arcade.</p>
+<p>Depois de ter reescrito tudo em YUI, Zeno se deparou que ainda faltava uma coisa, o plugin de jQuery para ativar o Konami Code. Por sorte reescrever a lógica do plugin foi igualmente simples, até porque basta detectar uma sequência de caracteres. Dias depois do lançamento veio uma <a href="https://github.com/html5-pro/oldRadio/pull/3">contribuição legal</a> de Djalma Araújo movendo para um módulo de YUI toda a lógica do Konami Code.</p>
+<p>Para ativar, digite:</p>
+<pre><code class="hljs"><span class="hljs-label">cima</span> + cima + <span class="hljs-keyword">baixo </span>+ <span class="hljs-keyword">baixo </span>+ esquerda + direita + esquerda + direita + <span class="hljs-keyword">b </span>+ a</code></pre>
+
+<p>E voilà!</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f7t7to9w1qe3219.jpg" alt=""></p>
+<h2 id="c-lculos-e-mais-c-lculos">Cálculos e mais cálculos</h2>
+<p>Uma dos principais desafios foram as questões matemáticas que envolvem a lógica do Player. Isso muitas vezes pode passar despercebido para as pessoas, mas pare para passar como você faria para aumentar e diminuir o volume do chiado à medida que o Tunner é rotacionado?</p>
+<p>Para essa e outras questões, Zanoni utilizou vários conceitos matemáticos.</p>
+<p>Basicamente o processo de rotação do tunner usa a lógica de <em>&quot;Pressiona&quot; -&gt; &quot;Arrasta&quot; -&gt; &quot;Solta&quot;</em>, onde no evento de <em>&quot;Pressiona&quot;</em> guardamos o valor que servirá de referência para a alteração do atributo que queremos modificar, nesse caso o ângulo do tunner. No <em>&quot;Arrasta&quot;</em> é onde iremos obter a diferença entre o valor inicial que recebemos no <em>&quot;Pressiona&quot;</em> e o obtido agora, e então faremos uma alteração baseada nessa diferença. E por fim, no <em>&quot;Solta&quot;</em> é onde finalizaremos esse processo.</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f7vi8C691qe3219.jpg" alt=""></p>
+<p>O &quot;Pressiona&quot; é um evento para detectar quando pressionarem o mouse sobre o tunner. Quando ele for disparado, o ângulo entre a posição do mouse e o centro do botão do tunner é calculado:</p>
+<pre><code class="hljs">angulo = Math.<span class="hljs-built_in">atan2</span>( tunerCenterY - MouseY , tunerCenterX - MouseX );</code></pre>
+
+<p>A função atan2 retorna um ângulo em radianos de um vetor dado os valores dos componentes y e x desse vetor.</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f7wcZ4wE1qe3219.jpg" alt=""></p>
+<p>Mas esse ângulo é retornado em radianos, para converter de radianos em graus, usamos:</p>
+<pre><code class="hljs">anguloGraus =  anguloRadianos * ( <span class="hljs-number">180</span>/Math.PI );</code></pre>
+
+<p>Então guardamos esse ângulo para ser a referência do valor inicial da sequência
+<em>&quot;Pressiona&quot; -&gt; &quot;Arrasta&quot; -&gt; &quot;Solta&quot;.</em></p>
+<p>O <em>&quot;Arrasta&quot;</em> é um evento que será chamado se o mouse mover sobre o tunner, quando esse evento for disparado iremos calcular o ângulo entre a posição do mouse e o centro do botão do tunner novamente, e veremos a diferença entre o ângulo inicial obtido no &quot;pressiona&quot; e o obtido agora.</p>
+<p>A partir desse valor podemos rotacionar o tunner e também alterar a estação da rádio, movendo o ponteiro das estações.</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f80zCZpS1qe3219.jpg" alt=""></p>
+<p>No caso da troca de estações queríamos que tivesse um efeito mais realista, para isso teria um ruído que apareceria e sumiria gradativamente entre uma estação e outra, para fazer esse efeito teríamos que obter 3 valores, o número da estação atual, o volume dessa estação e o volume do chiado. Esse valores teriam que ser calculados baseados na posição do ponteiro das estações.</p>
+<p>Como fazemos isso?</p>
+<p>Primeiro precisamos calcular a estação que está tocando no momento, usando a fórmula:</p>
+<pre><code class="hljs">numeroCanal = Math.<span class="hljs-command">round</span>( ( posicaoPonteiro / larguraDoMostrador ) * ( numeroDeCanais - <span class="hljs-number">1</span> ) );</code></pre>
+
+<p>Explicando melhor:</p>
+<pre><code class="hljs"><span class="hljs-list">( <span class="hljs-keyword">posicaoPonteiro</span> / larguraDoMostrador )</span></code></pre>
+
+<p>Serve para saber a posição do ponteiro em relação ao tamanho do mostrador, ou seja em que porcentagem o ponteiro se encontra.</p>
+<pre><code class="hljs"><span class="hljs-list">( <span class="hljs-keyword">numeroDeCanais</span> - <span class="hljs-number">1</span> )</span></code></pre>
+
+<p>Porque o primeiro canal é 0.</p>
+<pre><code class="hljs">Math.<span class="hljs-command">round</span></code></pre>
+
+<p>É a função que arredonda um número para o inteiro mais próximo ( ex: Math.round(2.3) = 2 ,Math.round(2.8) = 3 ), isso porque o número do canal é um inteiro e não um float.</p>
+<p><img src="http://media.tumblr.com/tumblr_m7f823B33Y1qe3219.jpg" alt=""></p>
+<p>Agora queremos saber o valor do volume do chiado e do som da estação, para obter a trasição gradativa usamos a função do coseno (Math.cos), a função do coseno gera uma ondulação que é exatamente o que queremos:</p>
+<pre><code class="hljs">Valor =  Math.<span class="hljs-built_in">cos</span>( ( posicaoPonteiro / larguraDoMostrador ) * ( numeroDeCanais - <span class="hljs-number">1</span> ) * Math.PI * <span class="hljs-number">2</span> );</code></pre>
+
+<p>Explicando melhor:</p>
+<pre><code class="hljs"><span class="hljs-list">( <span class="hljs-keyword">posicaoPonteiro</span> / larguraDoMostrador )</span> * <span class="hljs-list">( <span class="hljs-keyword">numeroDeCanais</span> - <span class="hljs-number">1</span> )</span></code></pre>
+
+<p>Tem o mesmo objetivo da fórmula anterior, porém agora sem arredondar.</p>
+<pre><code class="hljs">Math.PI * <span class="hljs-number">2</span></code></pre>
+
+<p>Multiplicamos o o valor por 2<em>Pi porque a Math.cos recebe como parâmetro um ângulo em radiano e a função coseno forma um ciclo a cada 2</em>Pi. Como nós queremos que a função gere um ciclo para cada canal temos que multiplicar por 2*PI</p>
+<p>Esse Valor é a posição da ondulação baseado nos nossos canais, mas esse valor varia entre -1 e 1, como não existe volume negativo temos que fazer um ajuste:</p>
+<pre><code class="hljs">volumeCanal = Valor * <span class="hljs-number">0.5</span> + <span class="hljs-number">0.5</span>;</code></pre>
+
+<p>Com essa conta, o resultado varia de 0 a 1 e podemos usar como o volume do canal.</p>
+<p>E volume do ruido é bem simples é o inverso do volume do canal. Por exemplo, se o canal está tocando à 90% de som, você completa o restante com ruído, ou seja 10%, se o canal esta tocando à 30%, o ruído vai estar à 70%.</p>
+<pre><code class="hljs">volumeRuido = <span class="hljs-number">1</span> - volumeCanal;</code></pre>
+
+<p><img src="http://media.tumblr.com/tumblr_m7f83d4E9o1qe3219.jpg" alt=""></p>
+<h2 id="concluindo">Concluindo</h2>
+<p>Esse projeto só está começando, a ideia é evoluir ele ainda mais utilizando recursos como Node.JS e integração com serviços como Twitter e Soundcloud. Tudo isso por um simples motivo: diversão.</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

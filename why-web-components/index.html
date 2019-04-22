@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Why Web Components? // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">Why Web Components?</h1>
+          <h2 class="post-subtitle">Apr 26, 2015</h2>
+
+        <p>By now, you may have heard a lot of things about Web Components. Some people say it&#39;s the promise land, others say it has been oversold.</p>
+<p>Although they&#39;re not going to solve all your life&#39;s problems, they do provide a paradigm shift from the traditional approach of web development.</p>
+<p>If you still aren&#39;t sure about what exactly is Web Components or even why you should care about it, this article is for you.</p>
+<h1 id="why-">Why?</h1>
+<p>At the start of the web we had a small set of tags. We had <code>&lt;form&gt;</code>, we had <code>&lt;select&gt;</code> - you would build your pages out of these tags and they had meaning. They had encapsulation, they had default UI, they would emit events when something interesting happened. Most of the time you just worked in markup.</p>
+<p>The way we build pages on the web these days is a little different. We either copy &amp; paste chunks of HTML from CSS libraries like Bootstrap or litter our pages with all sorts of JavaScript frameworks and plugins. On top of that, reusing components from different frameworks in the same page isn&#39;t always possible. This means our pages end up with bloated CSS, bloated JavaScript or both.</p>
+<p>What if HTML was expressive enough to allow us to extend HTML so we can fill in the gaps in functionality with our own tags? Well, Web Components enable that.</p>
+<h1 id="how-">How?</h1>
+<p>Specifically, Web Components are an umbrella term for four different W3C specifications:</p>
+<ul>
+<li><a href="http://webcomponents.org/articles/introduction-to-custom-elements/">Custom Elements</a> lets you define your own HTML tags;</li>
+<li><a href="http://webcomponents.org/articles/introduction-to-template-element/">HTML Templates</a> enables you to define blocks of markup with the ability to inject dynamic content into;</li>
+<li><a href="http://webcomponents.org/articles/introduction-to-shadow-dom/">Shadow DOM</a> gives you the ability to scope markup and styles in a separate DOM tree;</li>
+<li><a href="http://webcomponents.org/articles/introduction-to-html-imports/">HTML Imports</a> provides a way to include and reuse HTML documents in other HTML documents.</li>
+</ul>
+<p>Each of these pieces is useful individually. But when combined, this whole package gives you:</p>
+<ul>
+<li><strong>Composability</strong> (being able to create whole sites and apps by putting different elements together);</li>
+<li><strong>Encapsulation</strong> (isolating markup, style, and behavior logic so they don’t leak into the rest of the page);</li>
+<li><strong>Reusability</strong> (extending existing elements to create new elements, allowing you to stop reinventing the wheel).</li>
+</ul>
+<p>That means we can finally fill any gaps in the platform in a meaningful way. Which also opens an opportunity for a less fragmented ecosystem, where components can truly interoperate with each other.</p>
+<h1 id="more-">More?</h1>
+<p>We hope this brief guide inspires you to learn more about Web Components and forth experimenting with your own custom elements.</p>
+<p>If you want learn more you&#39;re in the right place, start taking a deep dive into our <a href="http://webcomponents.org/tags/introduction">introductory articles</a> or check it out this <a href="https://www.youtube.com/watch?v=T5y_lmLngAk">overview video</a>.</p>
+<p><code>&lt;have-fun&gt;</code> :)</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

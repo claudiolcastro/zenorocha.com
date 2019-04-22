@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entendendo CoffeeScript // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Entendendo CoffeeScript</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_loffq1Ym931qe3219.png)"></div>
+      <h2 class="post-subtitle">Aug 01, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>Quem é do mundo <a href="http://rubyonrails.org/">Ruby on Rails</a> já deve estar cansado de toda a polêmica acerca do <a href="http://jashkenas.github.com/coffee-script">CoffeeScript</a> meses atrás. Se você não acompanhou, vou tentar resumir a história. </p>
+<p><a href="http://en.wikipedia.org/wiki/David_Heinemeier_Hansson">DHH</a> (<a href="http://twitter.com/#!/DHH">@dhh</a>), um dos criadores do Rails, tornou público que a versão 3.1 do framework viria com <a href="http://jashkenas.github.com/coffee-script">CoffeeScript</a> por padrão, o que gerou um buzz gigantesco na comunidade com relação à sua utilidade.</p>
+<!-- more -->
+<p><img src="http://media.tumblr.com/tumblr_loffar2Trj1qe3219.jpg" alt=""></p>
+<p>Não vou me delongar nessa história, até porque não é esse o objetivo desse artigo. Se você quiser saber mais, pode conferir o que o <a href="http://akitaonrails.com/">Fábio Akita</a> (<a href="http://twitter.com/#!/akitaOnRails">@akitaOnRails</a>), referência no mundo Rails, <a href="http://akitaonrails.com/2011/04/16/a-controversia-coffeescript">escreveu sobre o assunto</a>.</p>
+<h2 id="afinal-o-que-coffeescript-">Afinal, o que é CoffeeScript?</h2>
+<p>É simplesmente uma linguagem que, quando compilada, gera Javascript. A ideia é facilitar a vida dos desenvolvedores jogando fora todos aqueles parênteses e chaves que atormentam nossas vidas. Expondo as boas boas partes do JavaScript de forma simples e objetiva.</p>
+<p>A regra de ouro do é:</p>
+<blockquote>
+<p><em>“It’s just JavaScript”.</em></p>
+</blockquote>
+<h2 id="vamos-ao-que-interessa">Vamos ao que interessa</h2>
+<p>A maneira mais fácil de começar a mexer com CoffeeScript é utilizando o <em>Live Edit</em> do próprio <a href="http://jashkenas.github.com/coffee-script/">site oficial</a>, para isso basta clicar na aba <em>Try CoffeeScript.</em> Lá você poderá escrever e compilar na própria interface do site.</p>
+<p>Ok, mas você não usará isso no seu dia-a-dia, isso é só para brincar. Se você quiser mesmo começar a utilizar essa linguagem em seus projetos existem dois caminhos.</p>
+<p>O primeiro, não muito aconselhável, é usando o compilador baseado no browser.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://jashkenas.github.com/coffee-script/extras/coffee-script.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/coffeescript"</span>&gt;</span><span class="undefined">
+  # inicie aqui a brincadeira
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>O que seria uma decisão não muito inteligente, pelo menos no ambiente de produção. Já que obviamente você não irá querer interpretar CoffeeScript em tempo de execução.</p>
+<p>Por conta disso, existe um compilador em <a href="http://nodejs.org/">Node.js</a> para pré-processar o arquivo.</p>
+<p><img src="http://media.tumblr.com/tumblr_lofh28YIKN1qe3219.png" alt=""></p>
+<p>Portanto, se você quer começar a usar CoffeeScript pra valer, tenha mente que você vai precisar de <a href="http://nodejs.org/">Node.js</a> e seu respectivo instalador de pacotes, o <a href="http://npmjs.org/">Npm</a>.</p>
+<p>Caso não os tenha instalado, conte com a ajuda do seu grande amigo Google. Se estiver em um sistema operacional Unix, confira no <a href="http://suissacorp.com.br/suissa/">blog do Suissa</a> (<a href="http://twitter.com/#!/osuissa">@osuissa</a>) como proceder com a instalação <a href="http://suissacorp.com.br/suissa/como-instalar-o-node-js-com-npm-no-ubuntu/">nesse artigo</a>. Se estiver em um sistema operacional Windows, você terá um pouco mais de trabalho.</p>
+<p>Com seu ambiente montado, vamos agora instalar o compilador de CoffeeScript utilizando o <a href="http://npmjs.org/">Npm</a> através da linha de comando.</p>
+<pre><code class="hljs">npm install coffee-<span class="hljs-keyword">script</span></code></pre>
+
+<p>Pronto, agora você está apto a compilar arquivos do tipo <em>.coffee</em>. Novamente, se você estiver no Windows, talvez tenha que utilizar <a href="https://github.com/alisey/CoffeeScript-Compiler-for-Windows">outros artifícios</a>, mas não desista <strike>(ou desista e instale um SO de verdade :P)</strike>.</p>
+<h2 id="tudo-pronto-vamos-brincar">Tudo pronto, vamos brincar</h2>
+<p>Primeiramente, vamos criar um arquivo chamado <em>amy.coffee</em> com o seguinte conteúdo.</p>
+<pre><code class="hljs">amyEstaViva = <span class="hljs-constant">false</span>
+
+<span class="hljs-keyword">if</span> amyEstaViva <span class="hljs-keyword">then</span> alert <span class="hljs-string">"Eu sabia!"</span> <span class="hljs-keyword">else</span> alert <span class="hljs-string">"Droga =/"</span></code></pre>
+
+<p>E agora vamos compilar.</p>
+<pre><code class="hljs">coffee <span class="hljs-comment">--compile amy.coffee</span></code></pre>
+
+<p>O resultado em JavaScript será:</p>
+<pre><code class="hljs"><span class="hljs-variable"><span class="hljs-keyword">var</span> amyEstaViva;
+
+amyEstaViva</span> = <span class="hljs-literal">false</span>;
+
+<span class="hljs-keyword">if</span> (amyEstaViva) {
+
+  alert(<span class="hljs-string">"Eu sabia!"</span>);
+
+} <span class="hljs-keyword">else</span> {
+
+  alert(<span class="hljs-string">"Droga =/"</span>);
+
+}</code></pre>
+
+<p>Nada de muito incrível, mas é uma pequena demonstração de quão legível fica um código feito em CoffeeScript.</p>
+<p>Aumentando um pouquinho o nível de complexidade, que tal resolvermos o clássico problema <a href="http://www.codinghorror.com/blog/2007/02/fizzbuzz-the-programmers-stairway-to-heaven.html">FizzBuzz</a> de um <a href="http://dojorio.wordpress.com/">Coding Dojo</a> com apenas uma linha?</p>
+<pre><code class="hljs"><span class="hljs-string">"<span class="hljs-subst">#{<span class="hljs-keyword">if</span> i%<span class="hljs-number">3</span> <span class="hljs-keyword">is</span> <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-string">'fizz'</span> <span class="hljs-keyword">else</span> <span class="hljs-string">''</span>}</span><span class="hljs-subst">#{<span class="hljs-keyword">if</span> i%<span class="hljs-number">5</span> <span class="hljs-keyword">is</span> <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-string">'buzz'</span> <span class="hljs-keyword">else</span> <span class="hljs-string">''</span>}</span>"</span> <span class="hljs-keyword">or</span> i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>]</code></pre>
+
+<p>Esse e outros códigos para impressionar seus amigos com apenas 1 linha podem ser encontrados <a href="http://ricardo.cc/2011/06/02/10-CoffeeScript-One-Liners-to-Impress-Your-Friends.html">nesse artigo</a> do <a href="http://ricardo.cc/">Ricardo Tomasi</a> (<a href="http://twitter.com/ricardobeat">@ricardobeat</a>).</p>
+<blockquote>
+<p>Mas eu amo jQuery e não faço nada em JS sem ele. Mimimimi</p>
+</blockquote>
+<p>Sem problemas. Com CoffeeScript, o jQuery fica ainda melhor.</p>
+<p>Imagine que você queira criar um plugin de jQuery em CoffeeScript.</p>
+<pre><code class="hljs"><span class="hljs-variable">$ </span>= jQuery
+
+<span class="hljs-variable">$.</span><span class="hljs-keyword">fn</span>.myFunction = -&amp;gt;
+
+  <span class="hljs-comment">### sua brincadeira aqui ###</span></code></pre>
+
+<p>E o resultado em JS:</p>
+<pre><code class="hljs"><span class="hljs-keyword">var</span> $;
+
+$ = jQuery;
+
+$.fn.myFunction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-comment">/* sua brincadeira aqui */</span>
+
+};</code></pre>
+
+<p>Por falar em plugins de jQuery, que tal ver uma implementação real usando a <a href="https://github.com/zenorocha/jquery-boilerplate/blob/master/plus/jquery.boilerplate.coffee">versão em CoffeeScript</a> do <a href="http://jqueryboilerplate.com">jQuery Boilerplate</a>? Se estiver interessado em mais exemplos de uso, confira o <a href="http://jashkenas.github.com/coffee-script/">site oficial</a> e diverta-se.</p>
+<h2 id="e-mais">E mais</h2>
+<p>Se você estiver sentindo falta de um <em>Syntax Highlighter</em> no seu editor como eu senti. Experimente essas versões para sistemas Unix.</p>
+<ul>
+<li>No GEdit - <a href="https://github.com/wavded/gedit-coffeescript">https://github.com/wavded/gedit-coffeescript</a></li>
+<li>No TextMate - <a href="https://github.com/jashkenas/coffee-script-tmbundle">https://github.com/jashkenas/coffee-script-tmbundle</a></li>
+</ul>
+<p>Você também pode converter seus códigos Javascript para CoffeeScript de forma automatizada, sem ter que se preocupar em transcrever centenas de linhas de código. Para isso utilize o <a href="http://ricostacruz.com/js2coffee/">Js2Coffee</a>. E se você gostou do que o CoffeeScript fez com seu Javascript, que tal a mesma coisa com seu HTML? Conheça o <a href="http://coffeekup.org/">CoffeeCup</a>. O CoffeeScript para marcação.</p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Mas então, será que precisamos mesmo saber CoffeeScript?
+Talvez não, mas com certeza precisamos saber JavaScript, isso é claro, se você lida com web. Em tempos em que a legibilidade do código tem sido cada vez mais valorizada. Muitos acreditam que a adoção dessa nova linguagem pode revolucionar o mundo do JavaScript, enquanto outros acham que é apenas mais uma forma de fazer mais do mesmo e simplesmente repudiam essa nova onda. Cabe a você identificar se essa linguagem agrega valor ao seu trabalho e lhe torna mais produtivo ou não. Valendo a máxima de que gosto não se discute, lembre-se que essa é uma escolha puramente estética e, consequentemente, pessoal.  E você o que acha dessa linguagem? Já implementou ou pensa em implementar em um projeto? Deixe sua opinião ;)</p>
+<h2 id="leia-tamb-m">Leia também</h2>
+<ul>
+<li><a href="http://arcturo.com/library/coffeescript/">The Little Book on CoffeeScript</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/rocking-out-with-coffeescript/">Rocking out with CoffeeScript - Nettuts+</a></li>
+<li><a href="http://issuu.com/autotelicum/docs/smooth_coffeescript">Smooth CoffeeScript</a></li>
+<li><a href="http://akitaonrails.com/2010/03/27/brincando-com-coffee-script">Brincando com CoffeeScript - AkitaOnRails</a></li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Automatizando tarefas JS com Grunt // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Automatizando tarefas JS com Grunt</h1>
+      <div class="post-image" style="background-image: url(/images/grunt.jpg)"></div>
+      <h2 class="post-subtitle">Mar 28, 2012</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>Você já parou pra pensar na quantidade de coisas que realiza repetidamente em seus projetos JavaScript?</p>
+<p>Se você for um cara preocupado com a consistência do seu código talvez utiliza várias vezes ao dia o <a href="http://www.jshint.com/">JSHint</a>/<a href="http://www.jslint.com/">JSLint</a>. Quem sabe você também se preocupa com a qualidade da sua aplicação e provavelmente utiliza o <a href="http://docs.jquery.com/QUnit">QUnit</a> para realizar testes unitários. Isso sem falar de performance, talvez você minifique e concatene seus arquivos com frequência antes de sair jogando eles online.</p>
+<p>Durante o <a href="http://riojs.org">Rio.js</a> Meetup desse último final de semana, o <a href="http://leobalter.net/">Leo Balter</a> (<a href="http://twitter.com/leobalter">@leobalter</a>) nos apresentou uma ferramenta que vem justamente para ajudar nesse processo e hoje vim aqui compartilhar com vocês também.</p>
+<!-- more -->
+<h2 id="o-que-">O que é?</h2>
+<p>Criado pelo <a href="https://github.com/cowboy/">Ben Alman</a> (<a href="http://twitter.com/cowboy">@cowboy</a>), o <a href="https://github.com/cowboy/grunt">Grunt</a> é uma ferramenta <em>beta</em> que você roda no terminal para automatizar tarefas (obs: se você não tem intimidade com o terminal, aproveite essa chance para se aventurar nele, não é o bicho de 7 cabeças que parece ser).</p>
+<h2 id="instalando">Instalando</h2>
+<p>Para começar a brincar você precisa ter o <a href="http://nodejs.org/">node.js</a> e o <a href="http://npmjs.org/">npm</a> (gerenciador de pacotes do node) instalados na sua máquina (não vou lhe mostrar como instalar isso, joga no Google que você encontra milhões de tutoriais).</p>
+<p>Depois basta instalar o grunt via npm:</p>
+<pre><code class="hljs">npm <span class="hljs-operator"><span class="hljs-keyword">install</span> -<span class="hljs-keyword">g</span> grunt</span></code></pre>
+
+<p>Agora temos tudo pronto para executar.</p>
+<h2 id="iniciando">Iniciando</h2>
+<p>Para dar os primeiros passos, vamos utilizar um comando que cria um scaffolding a partir de determinado template.</p>
+<pre><code class="hljs"><span class="hljs-tag">grunt</span> <span class="hljs-tag">init</span><span class="hljs-pseudo">:TEMPLATE</span></code></pre>
+
+<p>Até o momento, existem 3 opções de template:</p>
+<p>1) CommonJS (<a href="https://github.com/cowboy/grunt-commonjs-example/tree/HEAD~1">veja aqui um exemplo</a> de projeto criado com ele):</p>
+<pre><code class="hljs"><span class="hljs-tag">grunt</span> <span class="hljs-tag">init</span><span class="hljs-pseudo">:commonjs</span></code></pre>
+
+<p>2) jQuery (<a href="https://github.com/cowboy/grunt-jquery-example/tree/HEAD~1">veja aqui um exemplo</a> de projeto criado com ele):</p>
+<pre><code class="hljs"><span class="hljs-tag">grunt</span> <span class="hljs-tag">init</span><span class="hljs-pseudo">:jquery</span></code></pre>
+
+<p>3) Node (<a href="https://github.com/cowboy/grunt-node-example/tree/HEAD~1">veja aqui um exemplo</a> de projeto criado com ele):</p>
+<pre><code class="hljs">grunt init:<span class="hljs-keyword">node</span><span class="hljs-identifier"></span><span class="hljs-title"></span></code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_init.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="minifica-o">Minificação</h2>
+<p>O processo de minificação é feito utilizando o <a href="https://github.com/mishoo/UglifyJS/">UglifyJS</a>, basta rodar:</p>
+<pre><code class="hljs">grunt <span class="hljs-built_in">min</span></code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_min.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="concatena-o">Concatenação</h2>
+<p>Para concatenar seus arquivos JS, basta rodar:</p>
+<pre><code class="hljs"><span class="hljs-title">grunt</span> concat</code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_concat.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="lint">Lint</h2>
+<p>Para validar seu código através da ferramenta <a href="http://www.jshint.com/">JSLint</a>, basta rodar:</p>
+<pre><code class="hljs"><span class="hljs-title">grunt</span> lint</code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_lint.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="qunit">QUnit</h2>
+<p>Para executar seus testes unitários com <a href="http://docs.jquery.com/QUnit">QUnit</a>, utilizando uma instância do <a href="http://www.phantomjs.org/">PhantomJS</a>, basta rodar:</p>
+<pre><code class="hljs"><span class="hljs-title">grunt</span> qunit</code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_qunit.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="nodeunit">NodeUnit</h2>
+<p>Para executar seus testes unitários com <a href="https://github.com/caolan/nodeunit">nodeunit</a>, basta rodar:</p>
+<pre><code class="hljs">grunt <span class="hljs-built_in">test</span></code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_test.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="servidor">Servidor</h2>
+<p>Você também pode executar um servidor estático localmente, basta rodar:</p>
+<pre><code class="hljs">grunt <span class="hljs-keyword">server</span></code></pre>
+
+<p><a href="https://github.com/cowboy/grunt/blob/master/docs/task_server.md">Mais detalhes sobre esse comando aqui</a></p>
+<h2 id="concluindo">Concluindo</h2>
+<p>E é isso, espero que essa ferramenta lhe traga mais agilidade em seus projetos e te ajude, assim como tem me ajudado. Até a próxima!</p>
+<h2 id="leia-mais">Leia mais</h2>
+<ul>
+<li><a href="http://weblog.bocoup.com/introducing-grunt/">Introducing Grunt</a> - Bocoup</li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/meeting-grunt-the-build-tool-for-javascript/">Meet Grunt: The Build Tool for JavaScript</a> - Nettuts</li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

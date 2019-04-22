@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 - Local Storage // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">HTML5 - Local Storage</h1>
+      <div class="post-image" style="background-image: url(/images/html5.jpg)"></div>
+      <h2 class="post-subtitle">Apr 25, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <!-- <p class="demo-download"><a href="http://labs.zenorocha.com/html5/local-storage/" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325lvHwF1qe3219.png"/></a> <a href="https://github.com/zenorocha/HTML5-Local-Storage" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325u7HMG1qe3219.png"/></a></p> -->
+<p>Imagine um <strong><a href="http://pt.wikipedia.org/wiki/Cookie">cookie</a></strong> com muito mais espaço de armazenamento, onde os dados não são transitados a cada requisição de página e que, ainda por cima, não tenha data para expirar. Pronto, você imaginou a <a href="http://dev.w3.org/html5/webstorage/">API Web Storage</a> do HTML5.</p>
+<p>Ela se divide em dois tipos: <strong>sessionStorage</strong> e <strong>localStorage</strong>.</p>
+<ul>
+<li>A <strong>sessionStorage</strong> ficará disponível apenas para a janela que criou o dado até que seja fechada (por exemplo, quando a sessão for encerrada). Se você abrir outra janela, ela não terá acesso aos dados daquela sessão.</li>
+<li>A <strong>localStorage</strong>, por outro lado, não depende da sessão. Se você setar um dado no local storage esse ficará automaticamente disponível para qualquer janela. Além disso, permanecerá disponível até que seja explicitamente deletada pelo programador do site ou pelo o usuário. Perceba, o usuário pode fechar sua janela, reiniciar seu computador, viajar para o Acre e voltar mas os dados vão continuar lá.</li>
+</ul>
+<!-- more -->
+<h2 id="exemplo">Exemplo</h2>
+<p>No nosso exemplo vamos criar uma to-do list (lista de tarefas), foram retirados pequenos trechos do código para facilitar o entendimento, mas tudo o que você precisa saber sobre nosso estudo da API Storage se encontra aqui. Lembrando que é possível baixar o código dessa demonstração, caso queira olhar com mais detalhes.</p>
+<p>Foi utilizado <strong>jQuery</strong> para facilitar a escrita na hora de codificar o Javascript, para os que não estão familiarizados podem recorrer a <strong><a href="http://docs.jquery.com/">documentação</a></strong> ou a mim mesmo nos comentários desse post.</p>
+<p><strong>HTML</strong></p>
+<p>Vamos criar uma lista não-ordenada para armazenar cada tarefa. E um botão para limpar o armazenamento, caso o usuário queira apagar as tarefas. O segredo aqui é a propriedade <strong>contentEditable </strong>definida como <strong>true</strong>, com isso tornamos editável essa lista.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lista"</span> <span class="hljs-attribute">contenteditable</span>=<span class="hljs-value">"true"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"limpar"</span>&gt;</span>Limpar<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre>
+
+<p><strong>JS</strong></p>
+<p>Aqui definimos o método <strong>setItem</strong>, pertencente ao objeto <strong>localStorage</strong>, atribuindo a variável &quot;dados&quot; todo o html da nossa <code>&lt;ul&gt;</code> com id &quot;lista&quot;. Note que, nesse exemplo, o método é chamado a cada evento de tecla pressionada, mas você pode criar um botão e só chamar esse método ao clicá-lo por exemplo. Melhorando assim a performance da aplicação.</p>
+<pre><code class="hljs">$(<span class="hljs-string">"#lista"</span>).keypress(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  localStorage.setItem(<span class="hljs-string">'dados'</span>, $(<span class="hljs-string">"#lista"</span>).html());
+});</code></pre>
+
+<p>Aqui fazemos um <strong>if</strong> simples verificando se existe algum valor na variável &quot;dados&quot; ao chamar o método <strong>getItem</strong> do objeto <strong>localStorage</strong>. Caso exista, atribui a <code>&lt;ul&gt;</code> com id &quot;lista&quot; o html armazenado nela.</p>
+<pre><code class="hljs"><span class="hljs-keyword">if</span> (<span class="hljs-built_in">local</span>Storage.getItem(<span class="hljs-string">'dados'</span>)) {
+  $(<span class="hljs-string">"#lista"</span>).html(<span class="hljs-built_in">local</span>Storage.getItem(<span class="hljs-string">'dados'</span>));
+}</code></pre>
+
+<p>Podemos também utilizar o método <strong>clear</strong> que, como o próprio nome já diz, limpa o objeto <strong>localStorage</strong>. E, em seguida, atualiza o navegador para esvaziar os campos. Isso tudo ao ser clicado o <code>&lt;button&gt;</code> de id &quot;limpar&quot;.</p>
+<pre><code class="hljs">$(<span class="hljs-string">"#limpar"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  localStorage.clear();
+  <span class="hljs-built_in">window</span>.location = <span class="hljs-built_in">window</span>.location;
+});</code></pre>
+
+<h2 id="resultado">Resultado</h2>
+<p>Colocando tudo isso dentro de uma função temos:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  $(<span class="hljs-string">"#lista"</span>).keypress(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    localStorage.setItem(<span class="hljs-string">'dados'</span>, $(<span class="hljs-string">"#lista"</span>).html());
+  });
+
+  <span class="hljs-keyword">if</span> (localStorage.getItem(<span class="hljs-string">'dados'</span>)) {
+    $(<span class="hljs-string">"#lista"</span>).html(localStorage.getItem(<span class="hljs-string">'dados'</span>));
+  }
+
+  $(<span class="hljs-string">"#limpar"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    localStorage.clear();
+    <span class="hljs-built_in">window</span>.location = <span class="hljs-built_in">window</span>.location;
+  });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p><em>Mais fácil que isso, só ganhando do atlético paranaense.</em></p>
+<h2 id="compatibilidade">Compatibilidade</h2>
+<p>Agora, se você deseja implementar esse tipo de funcionalidade hoje, fique atento aos navegadores. Usando o <a href="http://www.modernizr.com/">Modernizr</a> você consegue detectar o suporte dos browsers para essa API.</p>
+<pre><code class="hljs"><span class="hljs-keyword">if</span> (<span class="hljs-constant">Modernizr</span>.localstorage) {
+  <span class="hljs-regexp">//</span> esse navegador suporta <span class="hljs-constant">HTML5</span> <span class="hljs-constant">Storage</span> <span class="hljs-symbol">:D</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-regexp">//</span> esse navegador <span class="hljs-constant">N</span>Ã<span class="hljs-constant">O</span> suporta <span class="hljs-constant">HTML5</span> <span class="hljs-constant">Storage</span> <span class="hljs-symbol">:</span>(
+}</code></pre>
+
+<p>E por hoje é só, fique atento a novos tutoriais de HTML5 e CSS3 que estão por vir.</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

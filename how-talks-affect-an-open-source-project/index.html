@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How talks affect an open source project? // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">How talks affect an open source project?</h1>
+          <h2 class="post-subtitle">Aug 03, 2015</h2>
+
+        <p>Good documentation, readable code, great performance, intuitive APIs. These are few things that differentiates a successful open source project than just another GitHub repo that nobody cares. But what if you&#39;ve done all that and still nobody is paying attention?</p>
+<p>Unless you’re a rockstar developer or a well-known company, you’ll need to promote your new thing. I know, I know, you&#39;re an engineer, &quot;promoting&quot; is a curse word for you. Well, I&#39;m sorry to tell you that but &quot;build it and they will come&quot; <a href="http://www.quora.com/Why-is-If-you-build-it-they-will-come-terrible-advice">doesn&#39;t work these days</a>.</p>
+<p>Once you accept that promoting is a necessary &quot;evil&quot;, there are <a href="https://hacks.mozilla.org/2013/05/how-to-spread-the-word-about-your-code/">many ways you can explore that like</a> sharing on social media, reaching out influencers, writing articles, recording screencasts, and so on.</p>
+<p>You can even go a tech conference and give a talk! Sounds scary, right? I know, I know, <a href="http://speaking.io/">public speaking is tough</a> and talking in front of other people can be intimidating. However, if you face that fear you&#39;ll see how it&#39;s actually a pretty rewarding experience.</p>
+<p>Conferences are unique opportunities to promote your thing because there&#39;s a lot of excitement going on. Attendees are simply eager to share something new to their followers and peers.</p>
+<p>But how can we prove that? How can we demonstrate that <strong>creating an open source project + giving a talk about it = growth of community interest</strong>? How can we evaluate interest after all?</p>
+<p>Driven by my endless curiosity on to <a href="http://www.quora.com/How-do-you-measure-success-in-developer-relations">how to measure developer relations success</a>, I did some data mining to find out how the answer. Let&#39;s explore two relevant open source projects from two big players in the tech industry.</p>
+<h2 id="react-by-facebook">React by Facebook</h2>
+<p><a href="https://github.com/facebook/react">React</a> was first announced at <a href="http://2013.jsconf.us/">JSConf US 2013</a>. Despite some <a href="https://twitter.com/cowboy/status/339853906681151488">severe feedback</a> in the beginning, they kept working closely to the community and now are one of the most popular frameworks of its kind.</p>
+<p>At the time I write this, React has a total of <strong>25,527</strong> stars on GitHub. What we&#39;re going to do here is scan each of those stars and check when the starring event happened. Then, we&#39;ll plot that data on a chart.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*67cNX3vW6a9a24myd258Zg.png" alt="React — GitHub stars collected by day"></p>
+<p>Cool! Now, can you see some peaks in the graph? Those are days when there were a lot of people starring that repo. I guess something relevant happened at that time, so let&#39;s do some research to find out.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*Ipm-WggtuCoHA9kG4r8O1Q.png" alt="React — GitHub stars collected by day VS conference dates"></p>
+<p>Coincidentally, talks about React in conferences such as <a href="http://2013.jsconf.us/">JSConf</a>, <a href="https://fbf8.com/">F8</a> and <a href="http://reactconf.com/">React Conf</a> happened at the very same day as those peaks.</p>
+<p>Besides giving talks, they also did a very good job in driving attention for their releases, specially with <a href="https://facebook.github.io/react/blog/2013/12/19/react-v0.8.0.html">0.8</a> and <a href="https://facebook.github.io/react/blog/2014/10/28/react-v0.12.html">0.12</a> versions.</p>
+<p>Okay, that was interesting to note. Now, let&#39;s check some other project to see if that formula is really true.</p>
+<h2 id="polymer-by-google">Polymer by Google</h2>
+<p><a href="https://github.com/polymer/polymer">Polymer</a> was first introduced in 2013 at a conference too. However, it wasn&#39;t a community driven event like JSConf, it was a much much bigger event, it was <a href="https://developers.google.com/events/io/2013/">Google I/O</a>.</p>
+<p>After years of improvements, they finally reached version <em>1.0</em>. Over the years, lots of releases and updates were made. Several of them announced at official Google events like <a href="https://developer.chrome.com/devsummit/">Chrome Dev Summit</a> and I/O.</p>
+<p>At this moment, Polymer has a total of <strong>11,919</strong> stars on GitHub. After some data mining, let&#39;s check how those stars are distributed over time.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*JzlED7A_il37jRPUYkRhPA.png" alt="Polymer — GitHub stars collected by day"></p>
+<p>Again, we can spot some peaks in the graph. Those peaks represents the amount of starring events that occurred at that particular day. I wonder what happened there.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*6_NSgfpo6jefLkUKmmG1gg.png" alt="Polymer — GitHub stars collected by day VS conference dates"></p>
+<p>There you have it, another clear correlation between star growth and conference appearances. As we expect, talks really have the power to drive momentum and all those events were important to boost React&#39;s and Polymer&#39;s interest and relevance with the community.</p>
+<p>Even though, GitHub stars don’t tell if a project A is better than project B <em>(please don&#39;t judge a repo by number of stars)</em>, it’s undeniable that this number shows how interested the community is in most of the times.</p>
+<p>And why is it important to have lots of people interested in a project? Because it&#39;s more people using it, which increases the chances of bug reports and contributions. Hopefully, this community interest that we&#39;ve been talking about will translate into a better software in the end.</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversores de Flash em HTML5 e a disputa entre Google e Adobe // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Conversores de Flash em HTML5 e a disputa entre Google e Adobe</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_lnvzxjaOFe1qe3219.jpg)"></div>
+      <h2 class="post-subtitle">Jul 11, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>Um dos recentes lançamentos da Google reavivou a briguinha Flash vs HTML5. Seu nome é <a href="http://swiffy.googlelabs.com/">Swiffy</a> e é mais um que entra pra galeria dos conversores de Flash para HTML5, <span>abrindo inúmeras possibilidades para dispositivos móveis</span>.</p>
+<p>Entenda como funcionam esses conversores e se vale mesmo a pena usá-los hoje.</p>
+<!-- more -->
+<h2 id="google-swiffy">Google Swiffy</h2>
+<p><img src="http://media.tumblr.com/tumblr_lnw1ljf6Td1qe3219.jpg" alt=""></p>
+<p>Junto com a recente maré de lançamentos da Google que trouxeram diversas novidades como <a href="https://plus.google.com">Google+</a>, veio também o <a href="http://swiffy.googlelabs.com/">Swiffy</a>. A ferramenta, disponível no Google Labs, está em fase de testes, mas já converte arquivos SWF 8 e ActionScript 2.0 para rodar em navegadores que aceitam HMTL 5.</p>
+<p>A Google disponibilizou algumas demonstrações de arquivos convertidos pela ferramenta.</p>
+<p><strong>Animação original em Flash</strong></p>
+<div class="iframe-wrap">
+  <iframe src="http://www.youtube.com/embed/http://swiffy.googlelabs.com/gallery/example4.swf" frameborder="0" allowfullscreen="true">
+  </iframe>
+</div>
+
+<p><strong>Animação convertida com Swiffy</strong></p>
+<div class="iframe-wrap">
+  <iframe src="http://swiffy.googlelabs.com/gallery/example4_swiffy.html" width="500" height="300">
+  </iframe>
+</div>
+
+<p>Surpreendente não? E olha que esse é apenas um dos exemplos disponíveis na <a href="http://swiffy.googlelabs.com/gallery.html">galeria</a> dos caras. </p>
+<p>Mas que tal testarmos com algo “real”, porque certamente esses arquivos foram feitos sob medida pela equipe de desenvolvimento para uma conversão perfeita.</p>
+<p>Pra isso queria escolher alguma coisa legal, quem sabe um exemplo do <a href="http://www.box2dflash.org/">Box2D</a>.</p>
+<div class="iframe-wrap">
+  <iframe src="http://labs.zenorocha.com/conversor/swf/box2d.swf" width="500" height="276">
+  </iframe>
+</div>
+
+<p>Porém, vamos tirando o cavalinho da chuva porque o conversor só funciona com arquivos feitos em ActionScript 3 e não AS2. Portanto, decidi montar um exemplo simples e que atendesse todos os pré-requisitos mínimos para uma boa conversão.</p>
+<div class="iframe-wrap">
+  <iframe src="http://labs.zenorocha.com/conversor/swf/torpedo.swf" width="500" height="450">
+  </iframe>
+</div>
+
+<p>E…tam tam tam…</p>
+<p>O tão esperado resultado.</p>
+<div class="iframe-wrap">
+  <iframe src="http://labs.zenorocha.com/conversor/swf/torpedo.html" width="500" height="450">
+  </iframe>
+</div>
+
+<p>Longe de estar satisfatório certo?</p>
+<p>Além disso, esse conversor da Google está mais para um conversor de SWF em WebKit do que outra coisa.</p>
+<p>O que eu quero dizer é que mesmo se sua conversão tiver funcionado 100% (o que não foi meu caso), ainda sim você terá que abrir seu HTML5 gerado no Chrome ou no Safari. </p>
+<h2 id="adobe-wallaby">Adobe Wallaby</h2>
+<p><img src="http://media.tumblr.com/tumblr_lnw1arknKr1qe3219.jpg" alt=""></p>
+<p>Demonstrada numa conferência da empresa no ano passado, a Adobe liberou para o público em março a ferramenta <a href="http://labs.adobe.com/technologies/wallaby/">Wallaby</a>, pioneira na conversão de arquivos no formato .fla para páginas usando HTML5.</p>
+<p>Seu algoritmo foca em reutilizar partes de um arquivo Flash no HTML onde o código produzido possa ser editado pelo usuário. Diferentemente do Swiffy que gera um formato eficiente para as máquinas, porém torna extremamente difícil sua edição.</p>
+<p>Confira <a href="http://my.adobe.acrobat.com/p46197453?launcher=false&amp;fcsContent=true&amp;pbMode=normal">aqui</a> o vídeo de introdução da ferramenta feito pelo pessoal da adobe.</p>
+<p>Agora vamos ao que interessa, nosso teste de conversão.</p>
+<p><span>Pra começar, outro ponto que difere a ferramenta da Google para essa é justamente o tipo de entrada da conversão. Enquanto, o <strong>Swiffy</strong> usa arquivos .swf, o <strong>Wallaby</strong> utiliza arquivos .fla.</span></p>
+<p>Lembrando que estes arquivos .fla devem ser gerados apenas na versão CS5 do Flash.</p>
+<p><span><img src="http://media.tumblr.com/tumblr_lo6pe7o8FB1qe3219.jpg" alt=""></span></p>
+<p>Para o teste com a ferramenta da Adobe utilizei aquele mesmo jogo acima do Torpedo.</p>
+<div class="iframe-wrap">
+  <iframe src="http://labs.zenorocha.com/conversor/swf/wallaby.html" width="500" height="450">
+  </iframe>
+</div>
+
+<p>É…nada muito legal certo?</p>
+<p>Além disso, outra característica que difere ao Swiffy é quanto a plataforma. O <strong>Wallaby</strong> não roda no navegador, é preciso baixar o software que só está disponível para sistemas operacionais Mac ou Windows. Ou seja, nós usuários Linux nos demos mal novamente.</p>
+<ul>
+<li><a href="http://download.macromedia.com/pub/labs/wallaby/wallaby_p1_mac_030811.dmg">Download Wallaby para Mac</a> (DMG, 29.6 MB)</li>
+<li><a href="http://download.macromedia.com/pub/labs/wallaby/wallaby_p1_win_030811.exe">Download Wallaby para Windows</a> (EXE, 13.5 MB)</li>
+</ul>
+<h2 id="adobe-vs-google">Adobe vs Google</h2>
+<p>E quem ganha essa briga no fim das contas?</p>
+<p>Você, eu, todos nós (principalmente os reféns do Steve Jobs).
+A web cresce com aplicações mais ricas e interativas em dispositivos móveis.</p>
+<p>Mas por favor, não caia nesse papinho sensacionalista de que agora a Google se aliou a Apple para acabar a Adobe, assim como eu <a href="http://appadvice.com/appnn/2011/06/google-now-helping-apple-kill-adobe-flash-once-and-for-all">vi em alguns blogs por ai</a>.</p>
+<p>Tudo o que a Google faz tem um objetivo bem claro por trás. Nesse caso, o interesse nesse tipo de ferramenta, busca claramente levar seus anúncios do Google Adsense para atingir um maior público que utiliza dispositivos móveis, gerando assim mais $$$. Ponto final.</p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Assim que a notícia de um conversor de Flash em HTML5 surge, todo entusiasta de HTML5 pensa: “Wow, agora sim o Flash morre de vez!”</p>
+<p>Take it easy, brothaa.</p>
+<p>Por mais que esses conversores mostrem exemplos incríveis, a realidade está longe de ser eficaz no âmbito comercial. Pelo menos hoje, diria até que está longe de ser no mínimo aceitável.</p>
+<p>De qualquer forma, o primeiro passo foi dado e agora só nós resta esperar pelo desenvolvimento dessas ferramentas. Até porque não se pode julgar muito ferramentas em fase de desenvolvimento.</p>
+<p>E você já utilizou alguma dessas ferramentas? O que acha dessa história toda?</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

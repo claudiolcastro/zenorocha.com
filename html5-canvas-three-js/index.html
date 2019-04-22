@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 - Canvas + Three.js // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">HTML5 - Canvas + Three.js</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_lrou6aDK1U1qe3219.jpg)"></div>
+      <h2 class="post-subtitle">Aug 14, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <!-- <p class="demo-download"><a href="http://labs.zenorocha.com/html5/canvas/" target="_blank"><img src="http://media.tumblr.com/tumblr_lk325lvHwF1qe3219.png" class="botao"/></a> <a href="https://github.com/zenorocha/HTML5-Canvas" target="_blank"><img src="http://media.tumblr.com/tumblr_lk325u7HMG1qe3219.png" class="botao"/></a> -->
+<p>Ahh o tão badalado canvas. Sempre um dos tópicos mais abordados quando o assunto é HTML5. Você já deve ter ouvido muito falar dele e, assim como eu, ter se impressionado com os <a href="http://www.canvasdemos.com/">diversos experimentos</a> que surgem todos os dias pela internet.</p>
+<p>Sempre quando via um desses pensava: “Por que não criar o meu próprio experimento?” Nada de muito incrível, apenas mais uma demonstração de quão poderoso é esse novo recurso.</p>
+<p>Por isso há alguns meses eu e o Zanoni Miranda, nos juntamos, matamos algumas aulas da faculdade e criamos esse exemplo utilizando a engine <a href="https://github.com/mrdoob/three.js/">Three.js</a>.</p>
+<p>E agora depois de todo esse tempo, venho compartilhar aqui com vocês o que é canvas, pra quer serve a engine <a href="https://github.com/mrdoob/three.js/">Three.js</a> e disponibilizar o código fonte dessa brincadeira toda.</p>
+<!-- more -->
+<h2 id="canvas">Canvas</h2>
+<p>Eu gosto de pensar na tag <code>&lt;canvas&gt;</code> como um quadro em branco, esperando para ser pintado com um poderoso píncel chamado Javascript.</p>
+<p>Mas é claro que, na verdade, é muito mais do que isso, com o canvas você consegue renderizar imagens, desenhar elementos complexos e criar animações.</p>
+<p>O que encanta mesmo com o advento do canvas é a possibilidade de fazer tudo isso sem usar qualquer plugin proprietário no seu navegador como <a href="http://get.adobe.com/br/flashplayer/">Flash Player</a> ou <a href="http://www.microsoft.com/getsilverlight/Get-Started/Install/Default.aspx">Silverlight</a>, é só HTML e Javascript.</p>
+<h2 id="three-js">Three.js</h2>
+<p>Se você não quer ter dor de cabeça na hora de fazer qualquer coisinha em 3D no navegador, eu sugiro que você conheça a <a href="https://github.com/mrdoob/three.js/">Three.js</a>.</p>
+<p>Uma engine criada pelo famoso <a href="http://mrdoob.com/">Mr.Doob</a>, um cara que desenvolve <a href="http://mrdoob.github.com/three.js/examples/webgl_materials_normalmap2.html">experimentos fantásticos</a> utilizando principalmente WebGL. Com essa engine você consegue criar com facilidade câmeras, objetos, materiais, cenas de iluminação e muito mais. Isso tudo podendo optar como a cena será desenhada, é só escolher Canvas, WebGL ou SVG.</p>
+<p>Depois de procurar e não encontrar absolutamente nenhum material em português sobre essa engine, decidi ir além de mais um tutorial sobre como usar canvas criando um quadradinho e resolvi explorar os recursos do 3D.</p>
+<h2 id="exemplo">Exemplo</h2>
+<p>Para que esse post não fique gigante, apenas trechos de código serão exibidos a seguir, portanto se estiver com alguma dúvida dê uma olhada no meu <a href="https://github.com/zenorocha/HTML5-Canvas">repositório do github que contém o código completo</a>. </p>
+<p>O exemplo será bem simples, criar um cubo e interagir com ele. Tudo isso, é claro, utilizando apenas Javascript.</p>
+<p>Pra começar, vamos instanciar a câmera e definir seu posicionamento.</p>
+<pre><code class="hljs">camera = <span class="hljs-keyword">new</span> THREE.Camera(<span class="hljs-number">70</span>, canvasWidth / canvasHeight, <span class="hljs-number">1</span>, <span class="hljs-number">1000</span>);
+
+camera.position.y = <span class="hljs-number">150</span>;
+
+camera.position.z = <span class="hljs-number">500</span>;
+
+camera.target.position.y = <span class="hljs-number">150</span>;</code></pre>
+
+<p>Depois vamos armazenar as cores das faces em um vetor com 6 posições e atribuir essas cores para cada uma das faces do material.</p>
+<pre><code class="hljs">var arrayCor, materiais = <span class="hljs-keyword">new</span> Array();
+
+arrayCor = [<span class="hljs-number">0x0092BF</span>, <span class="hljs-number">0x0092BF</span>, <span class="hljs-number">0xd9d9d9</span>, <span class="hljs-number">0xd9d9d9</span>, <span class="hljs-number">0xF14A29</span>, <span class="hljs-number">0xF14A29</span>];
+
+
+
+<span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span>; i &amp;lt; <span class="hljs-number">6</span>; i++) {
+
+    materiais.push( [<span class="hljs-keyword">new</span> THREE.MeshLambertMaterial( { color: arrayCor[i] } ) ] );
+
+}</code></pre>
+
+<p>Então criamos um mesh, um grafo tridimensional que contém os vértices, faces e materiais de um objeto 3D. Aí instancio o cubo passando esse mesh e atribuindo uma posição.</p>
+<pre><code class="hljs">var mesh = <span class="hljs-keyword">new</span> THREE.Cube(<span class="hljs-number">250</span>, <span class="hljs-number">250</span>, <span class="hljs-number">250</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, materiais);
+
+
+
+cubo = <span class="hljs-keyword">new</span> THREE.Mesh(mesh, <span class="hljs-keyword">new</span> THREE.MeshFaceMaterial() );
+
+cubo.position.y = <span class="hljs-number">150</span>;</code></pre>
+
+<p>Criamos a cena e atribuimos o cubo nela.</p>
+<pre><code class="hljs">cena = new THREE.Scene()<span class="hljs-comment">;</span>
+
+cena.addObject(cubo)<span class="hljs-comment">;</span></code></pre>
+
+<p>E também precisamos definir o objeto que vai renderizar esse canvas.</p>
+<pre><code class="hljs"><span class="hljs-keyword">renderer</span> = new THREE.CanvasRenderer();
+
+<span class="hljs-keyword">renderer</span>.setSize(canvasWidth, canvasHeight);
+
+<span class="hljs-keyword">container</span>.appendChild( <span class="hljs-keyword">renderer</span>.domElement );</code></pre>
+
+<p>Por fim, definimos que o container estará escutando pelo evento de quando o mouse está clicado e que quando esse evento for disparado chamará a função onMouseDown.</p>
+<pre><code class="hljs"><span class="hljs-keyword">container</span>.addEventListener(<span class="hljs-string">'mousedown'</span>, onMouseDown, <span class="hljs-keyword">false</span>);</code></pre>
+
+<p>E agora paramos por aqui antes que esse post fique enorme, se você quiser saber mais sobre o resto das funções é só acessar o <a href="https://github.com/zenorocha/HTML5-Canvas">repositório do github que contém o código completo</a>. </p>
+<h2 id="compatibilidade">Compatibilidade</h2>
+<p><img src="http://media.tumblr.com/tumblr_lpx8vu0fgd1qe3219.jpg" alt=""> Lembre-se sempre de utilizar o <a href="http://Modernizr">Modernizr</a> para detectar navegadores que não possuem suporte ao canvas. Dessa vez, para informar aquelas pessoas perdidas no tempo que elas não conseguem ver esse exemplo porque seus navegadores são ruins, vamos criar um fallback bem simples. Portanto, além dele utilizar o <a href="http://Modernizr">Modernizr</a>, vamos utilizar também o <a href="http://yepnopejs.com/">Yepnope</a> para nos auxiliar. Primeiro, testamos se o navegador tem suporte ao canvas. Caso tenha, carrego os scripts que serão responsáveis por criar essa brincadeira toda. Caso <strong>não</strong> tenha, carrego um css que será responsável por dizer ao nosso usuário que ele não tem suporte.</p>
+<pre><code class="hljs"><span class="hljs-tag">yepnope</span>({
+
+     <span class="hljs-attribute">test</span>: Modernizr.canvas,
+
+     <span class="hljs-attribute">yep</span>: [<span class="hljs-string">'build/Three.js'</span>, <span class="hljs-string">'js/RequestAnimationFrame.js'</span>, <span class="hljs-string">'js/canvas.js'</span>],
+
+     <span class="hljs-attribute">nope</span>: <span class="hljs-string">'css/canvas-polyfill.css'</span>
+
+});</code></pre>
+
+<p>E o resultado:</p>
+<p><img src="http://media.tumblr.com/tumblr_lpx89gb3aM1qe3219.png" alt=""> <a href="http://www.modernizr.com/">Modernizr</a> e <a href="http://yepnopejs.com/">Yepnope</a> formam um casal lindo, poderia fazer um post só sobre os dois, recomendo e muito o uso deles.</p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Mesmo com o canvas estando em fase de especificação, ele é realmente tudo o que dizem. Ele proporciona hoje, e proporcionará ainda mais no futuro, experiências extremamente ricas que no passado só podiam ser desenvolvidas utilizando ferramentas proprietárias. E aliado ao uso da engine <a href="https://github.com/mrdoob/three.js/">Three.js</a> conseguimos mais desempenho e agilidade em seu desenvolvimento. Espero que tenha gostado e aproveite pra deixar suas opiniões aqui abaixo.</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

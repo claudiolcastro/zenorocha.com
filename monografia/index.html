@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A performance dos principais sites do governo brasileiro // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">A performance dos principais sites do governo brasileiro</h1>
+          <h2 class="post-subtitle">May 29, 2013</h2>
+
+        <p>Depois de 4 anos estudando como um condenado, finalmente me formei! E como em
+todo final de curso, também tive que enfrentar a tal da monografia.</p>
+<p>Por conta de todas as viagens para palestrar, projetos open source para manter
+e as tarefas diárias do trabalho para lidar, não tive muito tempo para me dedicar
+a monografia do jeito que eu queria. Mesmo assim acho que o resultado ficou bem
+legal e muito relevante, por isso gostaria de compartilhar com vocês.</p>
+<!-- more -->
+<p><a href="/img/posts/monografia.jpg">Colação de Grau</a></p>
+<h2 id="tema">Tema</h2>
+<p>O tema escolhido para escrita foi performance. Eu já estava estudando tópicos
+relacionados à isso para criar o guia <a href="http://browserdiet.com/pt/">Como Perder Peso no Browser</a>,
+(<a href="http://tableless.com.br/como-perder-peso-no-browser/#.UaYWh2RASD0">leia mais</a>) então não foi complicado discorrer sobre o assunto. Organizar esse tema em um
+fluxo legal, no tom de monografia, isso sim foi difícil.</p>
+<p>O objetivo da monografia foi mostrar as diversas técnicas e ferramentas que auxiliam o desenvolvedor no processo de otimização da performance. Além disso, escolhi alguns sites para exemplificar as medidas de performance e a melhoria em decorrência do emprego das técnicas de otimização.</p>
+<p>Para definir quais seriam esses 5 sites avaliados em diferentes critérios ao longo da monografia, foi consultado o <a href="http://www.alexa.com/topsites/countries/BR">Alexa</a>, que é o ranking das páginas mais acessadas em cada país. Após a consulta pelo país Brasil, foi realizado um filtro por aqueles que continham o domínio <strong>.gov.br</strong>. O resultado foram os 5 mais acessados do governo brasileiro.</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Site</th>
+<th>Ranking Alexa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="http://caixa.gov.br">Caixa Econômica Federal</a></td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="http://www.sp.gov.br">Governo do Estado de São Paulo</a></td>
+<td>44</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="http://fazenda.gov.br">Ministério da Fazenda</a></td>
+<td>58</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="http://mec.gov.br">Ministério da Educação</a></td>
+<td>117</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="http://www.rj.gov.br">Governo do Estado do Rio de Janeiro</a></td>
+<td>132</td>
+</tr>
+</tbody>
+</table>
+<p>Depois foi testado cada um dos sites nas principais ferramentas de diagnóstico. O resultado, como você deve imaginar, foi assustador.</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Site</th>
+<th>PageSpeed</th>
+<th>YSlow</th>
+<th>WebPageTest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="http://caixa.gov.br">caixa.gov.br</a></td>
+<td>47</td>
+<td>74</td>
+<td>51</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="http://www.sp.gov.br">sp.gov.br</a></td>
+<td>66</td>
+<td>75</td>
+<td>67</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="http://fazenda.gov.br">fazenda.gov.br</a></td>
+<td>68</td>
+<td>98</td>
+<td>63</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="http://mec.gov.br">mec.gov.br</a></td>
+<td>78</td>
+<td>83</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="http://www.rj.gov.br">rj.gov.br</a></td>
+<td>52</td>
+<td>65</td>
+<td>56</td>
+</tr>
+</tbody>
+</table>
+<h2 id="problemas">Problemas</h2>
+<p>Então, ao longo da monografia, fui destrinchando as causas desses problemas.
+Não houve preocupação com relação à quantidade de dados trafegados no servidor.
+<strong>Nenhum</strong> dos sites comprimia HTML, CSS ou JavaScript por exemplo.</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Site</th>
+<th>Tamanho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="http://caixa.gov.br">caixa.gov.br</a></td>
+<td>1008 kb</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="http://www.sp.gov.br">sp.gov.br</a></td>
+<td>992 kb</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="http://fazenda.gov.br">fazenda.gov.br</a></td>
+<td>233 kb</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="http://mec.gov.br">mec.gov.br</a></td>
+<td>108 kb</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="http://www.rj.gov.br">rj.gov.br</a></td>
+<td>1600 kb</td>
+</tr>
+</tbody>
+</table>
+<p>O mesmo descaso aconteceu com relação ao número de requisições HTTP realizadas.
+O site do <a href="http://www.rj.gov.br">Governo do Estado do Rio de Janeiro</a> realiza 21
+requisições de arquivos JavaScript e 16 de arquivos CSS. O site da
+<a href="http://caixa.gov.br">Caixa Econômica Federal</a> realiza 82 requisições de imagens.</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Site</th>
+<th>Requisições</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="http://caixa.gov.br">caixa.gov.br</a></td>
+<td>120</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="http://www.sp.gov.br">sp.gov.br</a></td>
+<td>65</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="http://fazenda.gov.br">fazenda.gov.br</a></td>
+<td>37</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="http://mec.gov.br">mec.gov.br</a></td>
+<td>14</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="http://www.rj.gov.br">rj.gov.br</a></td>
+<td>87</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Esses são só alguns dos problemas, fique à vontade para ler o material inteiro: <a href="http://zno.io/PGbf">Técnicas para melhoria de performance em aplicações web no lado do cliente</a>.</p>
+<p>Nenhum dos portais mais acessados do governo brasileiro obteve um resultado bom. A maioria nem sequer apresenta uma performance satisfatória, o que é muito preocupante pois serviços públicos deveriam ser os primeiros a oferecer qualidade no acesso de suas páginas web. Como diria David Cheriton:</p>
+<blockquote>
+<p>&quot;Se é rápido e feio, as pessoas vão usá-lo e odiá-lo. Se é lento, elas não vão usá-lo.&quot;</p>
+</blockquote>
+<h2 id="sum-rio">Sumário</h2>
+<ol>
+<li>Introdução<ol>
+<li>O impacto da otimização de performance</li>
+<li>Onde deve-se focar a otimização</li>
+<li>Organização da escrita desta monografia</li>
+</ol>
+</li>
+<li>Ferramentas de diagnóstico de performance<ol>
+<li>YSlow</li>
+<li>Pagespeed</li>
+<li>WebPageTest</li>
+</ol>
+</li>
+<li>Sites selecionados para exemplificar as técnicas<ol>
+<li>Critério definido para a seleção de páginas</li>
+<li>Avaliações iniciais no Pagespeed, YSlow e WebPageTest</li>
+</ol>
+</li>
+<li>A anatomia de uma requisição HTTP<ol>
+<li>DNS lookup</li>
+<li>Initial connection</li>
+<li>Cabeçalho keep-alive</li>
+<li>Time to first byte</li>
+<li>Content download</li>
+</ol>
+</li>
+<li>O tempo de latência na rede</li>
+<li>O tamanho das requisições HTTP<ol>
+<li>Compressão de código<ol>
+<li>Compressão de JavaScript</li>
+<li>Compressão de CSS</li>
+<li>Compressão de HTML</li>
+</ol>
+</li>
+<li>Compressão de imagem<ol>
+<li>Compressão lossless</li>
+<li>Compressão lossy</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>O número de requisições HTTP<ol>
+<li>Concatenação de código<ol>
+<li>Concatenação de JavaScript</li>
+<li>Concatenação de CSS</li>
+</ol>
+</li>
+<li>Concatenação de imagem<ol>
+<li>CSS Sprites</li>
+<li>Data URIs</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Guia colaborativo sobre performance</li>
+<li>Conclusão</li>
+</ol>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

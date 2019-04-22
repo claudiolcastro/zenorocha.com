@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nem tudo que parece igual é realmente igual... // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Nem tudo que parece igual é realmente igual...</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_lq9if2Mh5J1qe3219.jpg)"></div>
+      <h2 class="post-subtitle">Aug 24, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>Por ser uma linguagem fracamente tipada, uma coisa que confunde muita gente que está começando com Javascript são os operadores de comparação.</p>
+<!-- more -->
+<pre><code class="hljs">var zero = <span class="hljs-string">"0"</span>;
+
+<span class="hljs-keyword">if</span> (zero == <span class="hljs-number">0</span>) {
+  <span class="hljs-comment">// será que entra aqui?</span>
+}
+
+<span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span>) {
+  <span class="hljs-comment">// ou aqui?</span>
+}</code></pre>
+
+<p>O símbolo &quot;igual&quot; possui três papéis diferentes nesse exemplo.</p>
+<p>Primeiramente, ele é responsável por uma atribuição de valor na variável zero.</p>
+<pre><code class="hljs"><span class="hljs-variable"><span class="hljs-keyword">var</span> zero</span> = <span class="hljs-string">"0"</span>;</code></pre>
+
+<p>Até aqui nenhuma novidade, continua parecido com a maioria das outras linguagens.</p>
+<p>Contudo, quando o assunto é comparação precisamos ter um olhar mais atento, pois podemos ter uma comparação comum (==) ou uma comparação estrita (===).</p>
+<pre><code class="hljs"><span class="hljs-keyword">if</span> (zero == <span class="hljs-number">0</span>) {
+  <span class="hljs-comment">// será que entra aqui?</span>
+  <span class="hljs-comment">// entra sim xD</span>
+}</code></pre>
+
+<p>O que acontece aqui é que, como a variável <em>zero</em> recebeu um valor do tipo string, antes de executar a comparação propriamente dita, será preciso uma conversão para um tipo numérico, por isso o resultado da comparação é verdadeiro.</p>
+<pre><code class="hljs"><span class="hljs-keyword">if</span> (zero === <span class="hljs-number">0</span>) {
+  <span class="hljs-comment">// ou será que entra aqui?</span>
+  <span class="hljs-comment">// entra não :(</span>
+}</code></pre>
+
+<p>Agora se a comparação for estrita, nenhuma conversão será feita sem que você mesmo tenha definido isso, portanto o resultado da comparação é falso já que uma string não é igual a um valor numérico.</p>
+<p>Na dúvida, saiba que:</p>
+<ul>
+<li>Duas strings são estritamente iguais quando possuem a mesma sequência de caracteres em suas respectivas posições e o mesmo tamanho.</li>
+<li>Dois números são estritamente iguais quando são numericamente iguais (<em>ohh! sério mesmo?</em>). Já o Nan não é igual a nada, nem mesmo igual ao próprio Nan. Zeros positivos e negativos são iguais.</li>
+<li>Dois booleanos são estritamente iguais se ambos são somente verdadeiros ou se ambos são somente falsos (<em>nossa, que novidade</em>).</li>
+<li>Dois objetos são estritamente iguais quando ambos se referenciam ao mesmo objeto.</li>
+<li>Tipos nulos e indefinidos são iguais, porém não estritamente.</li>
+</ul>
+<h2 id="operador-de-igualdade">Operador de igualdade</h2>
+<p><img src="http://media.tumblr.com/tumblr_lq9ktrs14y1qe3219.jpg" alt=""></p>
+<h2 id="operador-de-igualdade-estrita">Operador de igualdade estrita</h2>
+<p><img src="http://media.tumblr.com/tumblr_lq9ktg6aXi1qe3219.jpg" alt=""></p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Pelo sim, pelo não, use sempre o operador de comparação estrita. Se uma conversão de tipo precisa ser feita, deixe isso explícito #ficadica.</p>
+<h2 id="refer-ncias">Referências</h2>
+<ul>
+<li><a href="http://bonsaiden.github.com/JavaScript-Garden/">Javascript Garden</a></li>
+<li><a href="https://developer.mozilla.org/en/JavaScript">Mozilla Developer Network (MDN)</a></li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

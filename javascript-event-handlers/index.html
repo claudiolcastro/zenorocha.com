@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Event Handlers // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">JavaScript Event Handlers</h1>
+          <h2 class="post-subtitle">Mar 18, 2015</h2>
+
+        <p>Have you ever wondered what&#39;s the difference between this:</p>
+<pre><code class="hljs">elem.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{}</code></pre>
+
+<p>…and this:</p>
+<pre><code class="hljs">elem.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{});</code></pre>
+
+<p>They do the same thing, right? First listen for a click event, then execute a callback function. In fact, they&#39;re slightly different.</p>
+<h1 id="inline-events">Inline Events</h1>
+<p>When JavaScript arrived in the web, people used to attach events right into the markup.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"alert('Yay');"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre>
+
+<p>That line got the job done, but soon developers realized that this wasn&#39;t a good idea. They started advocating for a better separation of concerns. JavaScript should be moved to a <code>&lt;script&gt;</code> tag or <code>.js</code> file. This is generally what’s referred to as unobtrusive JavaScript.</p>
+<pre><code class="hljs">elem.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+  alert(<span class="hljs-string">'Yay'</span>);
+}</code></pre>
+
+<p>When moving inline event handlers to a JavaScript file, they gained more control over the scope. They could now use anonymous functions, function references, or closures.</p>
+<p>People got used to this syntax, many still use it nowadays, however there are some problems with that:</p>
+<ol>
+<li>You may only have one inline event assigned.</li>
+<li>Inline events are stored as a property of the DOM element and, like all object properties, it can be overwritten.</li>
+<li>This event will continue to fire even if you delete the onclick property.</li>
+</ol>
+<p>How do you solve that?</p>
+<h1 id="event-listeners">Event Listeners</h1>
+<p>Back in 2000, the <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html">DOM Level 2 Events Spec</a> was released, offering a more granular way to control events.</p>
+<pre><code class="hljs">elem.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+  alert(<span class="hljs-string">'Yay'</span>);
+});</code></pre>
+
+<p>In addition to multiple event listeners, you can also set a third optional parameter to control <a href="http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing/#answer-4616720">event bubbling</a>. If you want to remove any applied event just call <em>removeEventListener</em>.</p>
+<p>Unfortunately, Microsoft did notimplement the DOM Level 2 event model until IE9. Instead they had its own proprietary method.</p>
+<pre><code class="hljs">elem.attachEvent(<span class="hljs-string">'onclick'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+  alert(<span class="hljs-string">'Yay'</span>);
+});</code></pre>
+
+<h1 id="which-is-the-best-">Which is the best?</h1>
+<p>This question is a matter of browser support and necessity.</p>
+<p>jQuery and other javascript frameworks encapsulate the different browser implementations so you don&#39;t need to write cross-browser compliant code.</p>
+<p>No need to support IE8? Then, just go with <em>addEventListener</em>.</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

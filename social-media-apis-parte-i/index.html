@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Social Media APIs - Parte I // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">Social Media APIs - Parte I</h1>
+          <h2 class="post-subtitle">Apr 19, 2011</h2>
+
+        <p>A fim de promover uma melhor experiência do usuário com a aplicação, muitos sites tem integrado funcionalidades de plataformas externas à sua aplicação através das famosas <strong><a href="http://pt.wikipedia.org/wiki/API">APIs</a></strong>.</p>
+<p>Essa pequena série, dividida em três posts, pretende dar um rápido overview sobre as APIs das principais redes sociais.</p>
+<p>Pra começar, vamos falar um pouco sobre as APIs do <strong><a href="http://facebook.com">Facebook</a></strong> e <strong><a href="http://vimeo.com">Vimeo</a></strong>. E depois sobre as do <strong><a href="http://foursquare.com">Foursquare</a></strong>, <strong><a href="http://twitter.com">Twitter</a></strong>, <strong><a href="http://youtube.com">Youtube</a> </strong>e <strong><a href="http://flickr.com">Flickr</a></strong>.</p>
+<!-- more -->
+<h2 id="facebook-api"><a href="http://developers.facebook.com">Facebook API</a></h2>
+<p>A chamada Facebook Platform permite que você construa aplicativos para o próprio Facebook ou para Web, oferecendo uma coleção de APIs e SDKs.</p>
+<ul>
+<li><p><strong><a href="http://developers.facebook.com/docs/plugins/">Social Plugins</a></strong> - Um conjunto de plugins que facilitam a incorporação de elementos do Facebook ao seu site com um simples <em>copy &amp; paste</em>. Um bom exemplo disso é o famoso Like Button, extremamente difundido por conta da facilidade de uso através de um <code>&lt;iframe&gt;</code>.</p>
+</li>
+<li><p><strong><a href="http://developers.facebook.com/docs/reference/api/">Graph API</a></strong> - É o filé da Facebook Plataform, usado para ler e gravar dados dos objetos (Pessoa, Foto, Evento, Página, etc) fornecidos pelo site.</p>
+</li>
+<li><p><strong><a href="http://developers.facebook.com/docs/authentication/">Authentication</a></strong> - Permite incorporar à sua aplicação uma autenticação de login através da conta do próprio Facebook. Interage com a Graph API assim que a autenticação é concedida, oferecendo ao site todos os dados do usuário.</p>
+</li>
+</ul>
+<p>Exemplo: <a href="https://graph.facebook.com/zenorocha">https://graph.facebook.com/zenorocha</a></p>
+<pre><code class="hljs">{
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1021864713"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Zeno Rocha"</span></span>,
+  "<span class="hljs-attribute">link</span>": <span class="hljs-value"><span class="hljs-string">"http://www.facebook.com/zenorocha"</span></span>,
+  "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"zenorocha"</span></span>,
+  "<span class="hljs-attribute">gender</span>": <span class="hljs-value"><span class="hljs-string">"male"</span></span>,
+  "<span class="hljs-attribute">locale</span>": <span class="hljs-value"><span class="hljs-string">"en_GB"</span>
+</span>}</code></pre>
+
+<p>Para exemplificar, usamos a Graph API para obter as informações básicas de um usuário. O retorno é um JSON com as informações do usuário, depois é só manipular de acordo com o seu interesse.</p>
+<p>Além disso é possível encontrar na Facebook Plataform o SDK que mais se adequada a sua linguagem preferida, são eles: JavaScript SDK, iOS SDK (iPhone &amp; iPad), Android SDK e PHP SDK.</p>
+<p><em>Mais informações: <a href="http://developers.facebook.com">http://developers.facebook.com</a></em></p>
+<h2 id="vimeo-api"><a href="http://vimeo.com/api">Vimeo API</a></h2>
+<p>Este serviço de compartilhamentos de vídeos é outro que possui uma ótima documentação de suas APIs. Ao todo são disponibilizadas quatro “modalidades”, são elas:</p>
+<ul>
+<li><p><strong><a href="http://vimeo.com/api/docs/simple-api">Simple API</a></strong> - É a interface mais simples de acesso aos dados públicos do Vimeo que são obtidos através de JSON, XML ou PHP.</p>
+</li>
+<li><p><strong><a href="http://vimeo.com/api/docs/advanced-api">Advanced API</a></strong> - Como o próprio nome já diz, aborda métodos mais avançados e para tais consultas é necessário registrar uma application.</p>
+</li>
+<li><p><strong><a href="http://vimeo.com/api/docs/oEmbed">oEmbed</a></strong> - É um padrão aberto para <em>embedar </em>fotos e vídeos. Você pode usar a url de um vídeo qualquer do Vimeo e gerar esse código <code>&lt;oembed&gt;</code> facilmente.</p>
+</li>
+<li><p><strong><a href="http://vimeo.com/api/docs/moogaloop">Moogaloop</a></strong> - É o estranho nome do video player do Vimeo, nessa API é possível configurar o player com as linguagens Javascript ou Actionscript 3.</p>
+</li>
+</ul>
+<p>Exemplo: <a href="http://vimeo.com/api/v2/zenorocha/info.json">http://vimeo.com/api/v2/zenorocha/info.json</a></p>
+<pre><code class="hljs">{
+  "<span class="hljs-attribute">id</span>":<span class="hljs-value"><span class="hljs-string">"6796565"</span></span>,
+  "<span class="hljs-attribute">display_name</span>":<span class="hljs-value"><span class="hljs-string">"Zeno Rocha"</span></span>,
+  "<span class="hljs-attribute">location</span>":<span class="hljs-value"><span class="hljs-string">"Rio de Janeiro"</span></span>,
+  "<span class="hljs-attribute">url</span>":<span class="hljs-value"><span class="hljs-string">"http://zenorocha.com"</span></span>,
+  "<span class="hljs-attribute">profile_url</span>":<span class="hljs-value"><span class="hljs-string">"http://vimeo.com/zenorocha"</span></span>,
+  "<span class="hljs-attribute">total_videos_liked</span>":<span class="hljs-value"><span class="hljs-number">3</span>
+</span>}</code></pre>
+
+<p>No nosso exemplo, utilizamos a Simple API, numa chamada que consiste em 3 atributos, são eles: <em>username</em>, <em>request</em> e <em>output</em>:</p>
+<pre><code class="hljs"><span class="hljs-symbol">http:</span>/<span class="hljs-regexp">/vimeo.com/api</span><span class="hljs-regexp">/v2/username</span><span class="hljs-regexp">/request.output</span></code></pre>
+
+<p>Ao todo são 3 opções de <em>output</em>, JSON, PHP e XML. Já o número de requests são muitos e podem ser encontrados com mais detalhes no site.</p>
+<p><em>Mais informações: <a href="http://vimeo.com/api">http://vimeo.com/api</a></em></p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

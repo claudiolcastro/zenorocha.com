@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The problems with GitHub&#x27;s News Feed // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">The problems with GitHub&#x27;s News Feed</h1>
+          <h2 class="post-subtitle">Jan 12, 2016</h2>
+
+        <blockquote>
+<p>tl;dr — I&#39;m building some sort of TweetDeck for GitHub. It&#39;s called DevSpace and starting today you can request an invite to join the private beta.</p>
+</blockquote>
+<p>In 2008, GitHub was launched. It started as a simple place to host Git repositories and now, 8 years later, it&#39;s considered one of the most important development tools out there. More than that, it became a powerful social network with more than 11 million users.</p>
+<p>But wait a second, did I say <em>“social network”</em>? Yes! GitHub it’s not like Instagram or Facebook. Its dynamics are completely different and still it’s a pretty unique social tool.</p>
+<p>In fact, one of the best things about GitHub is following other developers to see what are the new projects they are creating, contributing or bookmarking. Before GitHub you had to find those developers on Twitter and hope they would share something interesting. Now you just see everything they&#39;re doing right in your news feed.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The <a href="https://twitter.com/github">@github</a> &quot;starred&quot; feed is really fascinating when you follow smart people. I wish they’d do more with it.</p>&mdash; Tim Hopper (@tdhopper) <a href="https://twitter.com/tdhopper/status/590139856145293312">April 20, 2015</a></blockquote>
+
+<p>The thing is, many people think that GitHub&#39;s news feed are limited and I must agree with them. Here are the reasons why:</p>
+<h2 id="refresh-refresh-refresh-">Refresh, Refresh, Refresh, …</h2>
+<p>There&#39;s no way to track what&#39;s happening in real-time. If you want to see what&#39;s going on through the day, you need keep a tab open and refresh it from time to time.</p>
+<p>I don&#39;t know how you feel about this but I believe that <strong>real-time updates are crucial</strong>, specially if you want to maintain users engaged with your app.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Q: When do you know your life has changed?<br>A: When you enjoy reading Github news feed rather than Facebook&#39;s one.</p>&mdash; Rajeeb Banstola (@RajeebTheGreat) <a href="https://twitter.com/RajeebTheGreat/status/597762021384294401">May 11, 2015</a></blockquote>
+
+<h2 id="news-feed-for-repos">News Feed for Repos</h2>
+<p>Let’s say you&#39;ve released a new open source project, or you’re a big fan of a certain project, or simply work everyday on the same repo.</p>
+<p>Wouldn’t it be nice to track activities individually based on repositories? Have you ever noticed that there are only news feeds for users and organizations?</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I would really love to see a &quot;news feed&quot; of sorts on <a href="https://twitter.com/github">@github</a> repos. Something that shows commits, comments, issues, etc all together..</p>&mdash; Caleb Jares (@cable729) <a href="https://twitter.com/cable729/status/545306559744450560">December 17, 2014</a></blockquote>
+
+<h2 id="noise-filtering">Noise Filtering</h2>
+<p>Sometimes you don’t want to see certain types of activities on the news feed. Maybe you don’t want <em>&quot;X starred Y&quot;</em> events or <em>&quot;X added Y&quot;</em> updates. Maybe there&#39;s a user or repo that you&#39;re not very interested right now.</p>
+<p>Whatever you consider noise, you should be able to filter it.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The latest &quot;trend&quot; of adding famous GitHub users to a repo to promote it is so lame... <a href="https://t.co/asfzUevisu">https://t.co/asfzUevisu</a> <a href="https://t.co/sNuq91M3m3">pic.twitter.com/sNuq91M3m3</a></p>&mdash; Sindre Sorhus (@sindresorhus) <a href="https://twitter.com/sindresorhus/status/694999624852045824">February 3, 2016</a></blockquote>
+
+<h2 id="1-screen-1-news-feed">1 Screen == 1 News Feed</h2>
+<p>Everyday hundreds of companies start using GitHub and guess what&#39;s the first thing they do? They create a new organization. Everyday hundreds of open source projects outgrow their creators and guess what&#39;s the first thing they do? They create a new organization.</p>
+<p>What ended up happening is that developers now participate in few different organizations and it’s important for them to track what’s happening on each of them.</p>
+<p>The problem is — you can only see one news feed at a time.</p>
+<p>I believe there&#39;s room for improvement here in terms of UI and UX.</p>
+<h2 id="so-who-is-going-to-save-us-">So who is going to save us?</h2>
+<p>Well, the good news is that their APIs are pretty awesome and I’ve been working on an app to make your life easier.</p>
+<p>Ladies and gentleman, meet <a href="https://devspace.io/">DevSpace</a>.</p>
+<p>DevSpace is a desktop app that helps you stay up to date with what’s happening on GitHub in real time. It’s heavily inspired by <a href="https://tweetdeck.twitter.com/">TweetDeck&#39;s</a> column layout, which helps you monitor multiple feeds on a single screen.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*92ku1LzvVD7U56kMbfu0oQ.png" alt="DevSpace Screenshot"></p>
+<p>At this moment, DevSpace is only available to a handful of developers. But starting today you can request an invite to join the private beta too! So make sure you head over to <a href="https://devspace.io/">devspace.io</a> so we can put you in!</p>
+<p>Also if you&#39;re interested on more updates about this app, subscribe to our Medium publication and follow us on Twitter! Happy coding ;)</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">you know the app i miss the most that doesn&#39;t exist (or does it)? a &quot;github news feed&quot; client.</p>&mdash; getify (@getify) <a href="https://twitter.com/getify/status/558090000773156864">January 22, 2015</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

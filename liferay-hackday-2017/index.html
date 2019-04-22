@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liferay Hackday 2017 // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Liferay Hackday 2017</h1>
+      <div class="post-image" style="background-image: url(/img/posts/liferay-hackday-17-1.jpeg)"></div>
+      <h2 class="post-subtitle">Feb 20, 2017</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>Every other year we have a company retreat where people from all over the world travel to California for a series of meetings and team building activities.</p>
+<p>This is a very unique opportunity for us and we&#39;re always thinking about ways to maximize it. This time we decided to organize another internal hackathon. That way participants could finally put a face to a GitHub user and have the chance to interact with people they never worked with before in a smaller, fun-setting environment.</p>
+<p>The idea of this article is to tell the story of how we made this happen and hopefully help you to organize a similar initiative.</p>
+<p><img src="/img/posts/liferay-hackday-17-2.jpeg" class="post-image-full"></p>
+<h2 id="registration">Registration</h2>
+<p>For lots of developers participating on this hackathon is amazing! It&#39;s a whole day where you can stop whatever you&#39;re doing, get paid to build whatever you want, have free food, and in the end, get some prizes.</p>
+<blockquote>
+<p>But not everybody likes to write code in a fast pace, not everybody likes to compete with others, and not everybody likes to stay in the office until late. You must respect that.</p>
+</blockquote>
+<p>That means our first step was to build a site for people to register and explain how all that would work. You know, rules, expectations, agenda, etc.</p>
+<p><img src="/img/posts/liferay-hackday-17-3.png" alt=""></p>
+<h2 id="starting">Starting</h2>
+<p>At 8:30am participants started to arrive.</p>
+<p>We began the day by asking them to write ideas on a piece of paper and come in front of everybody to pitch their proposals. Our only instruction was:</p>
+<blockquote>
+<p>Describe what you wanna do and what are the resources you need to make it happen.</p>
+</blockquote>
+<p>The recruiting process was very organic, but we encouraged them to choose people that didn’t belong to their usual departments and regions. We also wanted to foster open source development, that means every project had to be hosted on GitHub.</p>
+<p><img src="/img/posts/liferay-hackday-17-4.jpeg" class="post-image-full"></p>
+<h2 id="action">Action</h2>
+<p>Once all teams were formed, it was time to start developing the ideas.</p>
+<p>Some people are very competitive so they began to work frenetically whereas others were going slowly. You can&#39;t really interfere with how people work, but you can definitely influence and stimulate a different kind of environment. That&#39;s why we put on very loud music to shake things up and a huge countdown to remind them that time was ticking away.</p>
+<p>From time to time, I’d visit teams to check how things were moving.</p>
+<blockquote>
+<p>Acting as a mentor, facilitator, or simply giving an outside perspective is crucial to a team&#39;s success.</p>
+</blockquote>
+<p>Food needs to be served throughout the day, however we did it in such a way that was not intrusive and didn’t cause too many distractions.</p>
+<p><img src="/img/posts/liferay-hackday-17-5.jpeg" class="post-image-full"></p>
+<h2 id="awards">Awards</h2>
+<p>In our <a href="https://medium.com/developer-relations/liferay-hack-day-46a715239cf0#.rdhcw17gy">previous Hackday</a>, we decided that we didn&#39;t want to have one single winner. We wanted them to feel like they accomplished something and were rewarded by this. That’s why we kept the same four categories as before.</p>
+<p><strong>Best Technical Achievement</strong> — <em>Did the participants solve a hard technical problem? Did they get a working demo completed within the allotted time?</em></p>
+<p><strong>Most Impactful Project</strong> — <em>How does this changes the life of developers, employees, clients, partners, or end-users?</em></p>
+<p><strong>Best User Experience</strong> — <em>Is it easy to interact and understand? How do you feel about using such it?</em></p>
+<p><strong>Most Innovative Solution</strong> — <em>Could this be a radical innovation or a meaningful new take on an existing product or service?</em></p>
+<p>The winners would get a special mug and all participants would receive some nice stickers and t-shirts.</p>
+<p><img src="/img/posts/liferay-hackday-17-6.jpeg" class="post-image-full"></p>
+<h2 id="presentations">Presentations</h2>
+<p>At 6pm everybody had to stop coding and move to the presentation area.</p>
+<div class="iframe-wrap">
+  <iframe src="//www.youtube.com/embed/?list=PLKb_gn-WO_Kp27mYBFN2GEaNLTR4VSXP9">
+  </iframe>
+</div>
+
+<p>For <em>“Best Technical Achievement”</em>, a team who built a home automation system using <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. They basically collect sensor data like temperature and humidity, then use <a href="http://wedeploy.com/">WeDeploy</a> to store that information. They also built a mobile app and web interface to display that data.</p>
+<p>For <em>“Most Impactful Project”</em>, a web application that fetches JIRA tickets and generates release notes for you. This is a challenging problem to solve because it involves a big amount of tickets, but they built it in a way that was easy to read and digest.</p>
+<p>For <em>“Best User Experience”</em>, a voice activated web app called Chicken Hands. The idea is to allow you to navigate through a recipe while you’re cooking. So you can hear pieces of a recipe and trigger commands using your voice like fetching the list of ingredients. They also used <a href="http://wedeploy.com/">WeDeploy</a> for hosting.</p>
+<p>Finally, for <em>“Most Innovative Solution”</em>, a mobile app that calculates the traffic to work and auto-adjusts your alarm based on that traffic. That way you&#39;ll never be late to work again.</p>
+<p><img src="/img/posts/liferay-hackday-17-7.jpeg" class="post-image-full"></p>
+<h2 id="judges">Judges</h2>
+<p>But who decides who wins?</p>
+<p>Well, we invited a special group of people to be our judges, that way we would have very different perspectives from different fields and cultures.</p>
+<ul>
+<li>JR Houn <em>(Lead Senior Test Engineer in North America)</em></li>
+<li>Vitor Fernandes <em>(Design Coordinator in Latin America)</em></li>
+<li>Bryan Cheung <em>(Co-founder &amp; Chief Executive Officer)</em></li>
+<li>Chema Balsas <em>(Principal Frontend Engineer based in Europe)</em></li>
+</ul>
+<p><img src="/img/posts/liferay-hackday-17-8.jpeg" class="post-image-full"></p>
+<h2 id="thanks-">Thanks!</h2>
+<p>This was not a only one man&#39;s work, many people made this possible, and I&#39;d like to say thanks for everybody that helped organize this thing (specially <a href="https://web.liferay.com/web/joshua.kuo/profile">Joshua Kuo</a>) and all the participants who worked so hard on their ideas.</p>
+<p>What about you? Are you planning to organize your own <em>hack day</em>? Any suggestions on how we can improve the next one? Feel free to leave a comment and share this with your friends!</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

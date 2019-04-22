@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 - Async Scripts // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">HTML5 - Async Scripts</h1>
+      <div class="post-image" style="background-image: url(http://media.tumblr.com/tumblr_lrovdkNq881qe3219.jpg)"></div>
+      <h2 class="post-subtitle">Sep 18, 2011</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <!-- <p class="demo-download"><a href="http://labs.zenorocha.com/html5/script" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325lvHwF1qe3219.png"/></a> <a href="https://github.com/zenorocha/HTML5-Script" target="_blank"><img class="botao" src="http://media.tumblr.com/tumblr_lk325u7HMG1qe3219.png"/></a> -->
+<p>O volume de mudanças que a <a href="http://www.w3.org/TR/html5/scripting-1.html#attr-script-async">nova especificação do HTML</a> propõe para tag <code>&lt;script&gt;</code> é pequeno, mas chama atenção por resolver antigos problemas de performance.</p>
+<p>Nesse artigo vamos entender quais são esses problemas e dar uma passada geral nas mudanças que o HTML5 propõe para essa tag.</p>
+<!--more-->
+<h2 id="type">type</h2>
+<p>Pra começar, lembra do famoso <em>type=text/javascript</em>?</p>
+<p>Então, pode esquecer ele. A declaração desse <a href="http://pt.wikipedia.org/wiki/MIME">MIME type</a> antes obrigatório no HTML4, se tornou opcional no HTML5, isso é claro, se você utilizar javascript ali dentro.</p>
+<h2 id="language">language</h2>
+<p>O antigo atributo <em>language,</em> ainda visto em sistemas legados, agora está depreciado devido a nunca ter se tornado um padrão de fato.</p>
+<h2 id="o-velho-problema-de-performance-dos-scripts">O velho problema de performance dos scripts</h2>
+<p>Quaisquer arquivos javascript quando carregados utilizando a tag <code>&lt;script&gt;</code> são bloqueantes por natureza.</p>
+<p>Enquanto é feito o download e execução do script todo o processo de parser do DOM é bloqueado, impedindo a renderização do resto da página. E olha que isso se aplicada a cada tag de script contida na página.</p>
+<p>A <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.1.4">especificação do HTTP/1.1</a> diz que os navegadores não devem proceder com downloads de mais de 2 componentes em paralelo por host.</p>
+<p>Uma famosa técnica de otimização de velocidade é servir imagens em múltiplos hosts, assim você consegue mais de dois downloads ocorrendo em paralelo. Entretanto, quando se trata de script o browser não irá iniciar nenhum outro download, enquanto o script é baixado, mesmo que em hosts diferentes.</p>
+<p>Navegadores antigos, fazem o carregamento dos scripts um após o outro, veja como funciona no Firefox 3.0.</p>
+<p><img src="http://media.tumblr.com/tumblr_lrq5znRVSb1qe3219.gif" alt=""></p>
+<p>Alguns browsers já fazem downloads em paralelo, mas o problema de renderização persiste.</p>
+<h2 id="async-defer">async &amp; defer</h2>
+<p>Os atributos booleanos <em>async</em> e <em>defer</em> vêm para gerenciar exatamente esse tipo de problema. Ou seja, scripts bloqueantes nunca mais.</p>
+<p>Para facilitar o entendimento, vou explicar como seria o funcionamento na prática de cada uma dessas linhas:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"exemplo.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>A página aguarda o script terminar de carregar antes de continuar sua renderização e sua execução é feita imediatamente após. Isso pode aumentar significativamente o tempo de carregamento da página.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">async</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"exemplo.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>O download do script é feito de forma assíncrona enquanto o processo de renderização da página continua a ser feito. O script é executado depois que o download estiver completo.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">defer</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"exemplo.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Assim como o exemplo acima, o download do script é feito de forma assíncrona. Mas sua execução se dá apenas quando todo o processo de renderização estiver concluído.</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">async</span> <span class="hljs-attribute">defer</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"exemplo.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Nesse caso, o <em>async</em> prevalece e o <em>defer</em> é ignorado. Isso possibilita que os desenvolvedores possam usar <em>async</em> em browsers que o suportam, mas proporciona um fallback com <em>defer</em> para os browsers que não suportam o <em>async</em>.</p>
+<h2 id="compatibilidade">Compatibilidade</h2>
+<p><a href="http://caniuse.com/script-async"><img src="http://media.tumblr.com/tumblr_lroul8WafP1qe3219.jpg" alt=""></a> A implementação do atributo <em>async</em> continua lenta em alguns navegadores. A Microsoft, por exemplo, só <a href="http://msdn.microsoft.com/en-us/ie/hh272905">anunciou o suporte para este atributo na versão 10</a> que nem foi lançada ainda. Melhor do que o Opera que nem previsão de suporte oferece. <a href="http://caniuse.com/script-defer"><img src="http://media.tumblr.com/tumblr_lroundIovj1qe3219.jpg" alt=""></a> Já para o atributo <em>defer</em> a história é outra, sua implementação pela Microsoft é antiga e outros players têm se adaptado há pouco tempo.</p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>Com essa possibilidade de carregar scripts de forma assíncrona, seria a morte dos famosos <em>script loaders</em>, como <a href="http://headjs.com/">HeadJS</a> e o <a href="http://labjs.com/">LABjs</a>? Essa é uma questão interessante, pois eles chegaram no mercado justamente com o intuito de resolver o problema dos scripts bloqueantes, mas sua permanência ainda deve continuar por um bom tempo. Primeiro por conta do suporte precário de alguns browsers para essas propriedades e segundo porque eles propõe outras funcionalidades bem interessantes. Por exemplo, alguns já combinam todos seus scripts em um só, assim apenas uma requisição HTTP é feita ao servidor, outros possibilitam controles de dependência. O fato é que, acabando ou não com os <em>scripts loaders</em>, esses atributos por mais simples que pareçam vão proporcionar aplicações com muito mais performance para todos nós. HTML5 sem javascript, é como assistir o Tom sem o Jerry, por isso que uma forma otimizada de fazer seu carregamento se mostra tão relevante. </p>
+<h2 id="refer-ncias">Referências</h2>
+<ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html">Best Practices for Speeding Up Your Web Site - Yahoo Developer Network</a></li>
+<li><a href="http://www.webkit.org/blog/1395/running-scripts-in-webkit/">Running Scripts in WebKit - The WebKit Open Source Project</a></li>
+<li><a href="http://code.google.com/intl/en/speed/index.html">Let’s make the web faster - Google Code</a></li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>

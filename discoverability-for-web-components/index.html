@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Discoverability for Web Components // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header ">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://github.com/zenorocha" title="GitHub">
+        <svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg>
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <header class="post-header">
+      <h1 class="post-title">Discoverability for Web Components</h1>
+      <div class="post-image" style="background-image: url(/img/posts/discoverability-for-web-components.png)"></div>
+      <h2 class="post-subtitle">May 26, 2015</h2>
+    </header>
+    <div class="post-content post-article">
+      <div class="post-container">
+
+        <p>In a world where you can create your own <code>&lt;awesome-button&gt;</code> tag and distribute it with a simple <code>&lt;link rel=&quot;import&quot; href=&quot;awesome-button.html&quot;&gt;</code>, a whole range of options for composability and reusability emerges.</p>
+<p><a href="http://webcomponents.org/">Web Components</a> are coming and there are many challenges coming along. How we connect component authors with component consumers is one of them.</p>
+<h1 id="amd-commonjs-html-imports-es6-modules-">AMD? CommonJS? HTML Imports? ES6 Modules?</h1>
+<p>Dependency management has always been a trouble for client-side developers.</p>
+<p>We started defining global variables but one could not ensure that the same global variable name wasn&#39;t used in a page already. Then, module specs like <em>AMD</em> and <em>CommonJS</em> appeared but the community never came to a consensus on which one to use.</p>
+<p>Now, <em>EcmaScript 6</em> and <em>Web Components</em> are coming and they both introduce a different approach to dependency management.</p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> { MyDependency } <span class="hljs-keyword">from</span> <span class="hljs-string">"my-dependency"</span>;</code></pre>
+
+<p>vs</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"import"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"my-dependency.html"</span>&gt;</span></code></pre>
+
+<p>It&#39;s still unclear how they&#39;ll interoperate but being able to package templates, images, styles, and scripts into one file is not only appealing but a key factor in making Web Components truly successful (<a href="https://hacks.mozilla.org/2014/12/mozilla-and-web-components/">despite browser vendor disagreements</a>).</p>
+<h1 id="npm-jspm-bower-component-">npm? jspm? bower? component?</h1>
+<p>Speaking about lack of consensus, nowadays there&#39;s a clear fragmentation in the front-end package management world as well.</p>
+<p>New tools like <a href="http://spmjs.io/">spm</a>, <a href="http://jamjs.org/">jam</a>, and <a href="http://volojs.org/">volo</a> appears everyday. In the meanwhile, developers still struggle between choosing <em>Bower</em> or <em>npm</em>.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;What is Bower?&quot;<br>&quot;A package manager&quot;<br>&quot;How do I install it?&quot;<br>&quot;Use npm&quot;<br>&quot;What&#39;s npm?&quot;<br>&quot;A package manager&quot;<br>&quot;....&quot;</p>&mdash; Jakob Homan (@BlueBoxTraveler) <a href="https://twitter.com/BlueBoxTraveler/status/453685413115203584">April 9, 2014</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Sure, everybody loves <em>npm</em>. It works well, it’s <a href="http://status.npmjs.org/">reliable</a>, many communities are <a href="http://blog.npmjs.org/post/111475741445/publishing-your-jquery-plugin-to-npm-the-quick">moving</a> <a href="http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html">there</a>, and they got some <a href="https://www.crunchbase.com/organization/npm">serious funding</a> which indicates continuous development.</p>
+<p>However, the way it handles dependencies isn’t suitable for the web. Unless you want different versions of the same library loaded in your page. That&#39;s why some people still prefer <em>Bower</em> because it manages dependencies in a flat tree. <a href="https://github.com/npm/npm/wiki/npm-%E2%87%94-Polymer-brainstorming-session">Hopefully</a>, this will be solved on <a href="https://github.com/npm/npm/wiki/Roadmap">npm@3</a>.</p>
+<h1 id="gallery-registry-search-">gallery? registry? search?</h1>
+<p>There are many different approaches that could improve how people find what components they need.</p>
+<p>For instance, we could build a new registry just like <em>npm</em> and <em>Bower</em>. But let&#39;s face it, no one wants to install another <em>CLI</em> or include another configuration file in their repositories.</p>
+<p>Another solution would be having a curated list of <em>Web Components</em>. That’s actually how we started <a href="https://customelements.io/">CustomElements.io</a>, it was a gallery where people would manually submit their projects. But soon we realized that if we wanted to scale that was not an option anymore.</p>
+<blockquote>
+<p>90% percent of everything is crap — Sturgeon’s law</p>
+</blockquote>
+<p>The way I see it, a powerful discoverability tool for <em>Web Components</em> should be able to scrape those package managers and provide information that would help developers to make decisions about what third-party component to use, regardless of where it’s registered.</p>
+<p>And that&#39;s what we&#39;re trying to do. We&#39;re building a new <a href="https://customelements.io/">CustomElements.io</a> to better connect component authors with component consumers.</p>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*sZNZ7KJ-HYcO1HuTvlp1FA.png" alt=""></p>
+<p>Built on top of <a href="https://nodejs.org/">Node</a>, <a href="http://hapijs.com/">Hapi</a>, <a href="https://www.elastic.co/">ElasticSearch</a>, and <a href="http://webcomponents.org/">Web Components</a> (why not?), we hope to serve the community with a much better discoverability experience. For now, we&#39;re introducing a new design and architecture, expect more really cool features pretty soon.</p>
+<p>As always, ideas are welcome on <a href="https://github.com/customelements/www">GitHub</a>.</p>
+<blockquote>
+<p>Thanks to <a href="https://twitter.com/keppelen">Giovanni Keppelen</a> and <a href="https://twitter.com/italowaxman">Italo Waxman</a>.</p>
+</blockquote>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>
