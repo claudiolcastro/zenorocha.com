@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducing WeDeploy // Zeno Rocha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/senna.css">
+
+
+  <script src="/js/senna.min.js"></script>
+  <script src="/js/headroom.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Inspectlet -->
+  <script>
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 772378335]);
+    (function() {
+      function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+      if (window.attachEvent){
+        window.attachEvent('onload', __ldinsp);
+      }else{
+        window.addEventListener('load', __ldinsp, false);
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4114546-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body data-senna data-senna-surface>
+  <div class="senna-loading-bar"></div>
+
+  <header class="site-header site-header-white">
+    <a href="/" class="logo">zeno</a>
+  
+    <nav class="site-nav">
+      <ul>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/talks/">Talks</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/reminder/">Reminder</a></li>
+      </ul>
+    </nav>
+  
+    <div class="nav-social">
+      <a href="https://twitter.com/zenorocha" target="_blank" title="Twitter">
+        <img src="/images/icon-twitter.svg" alt="Twitter">
+      </a>
+      <a href="https://instagram.com/zenorocha" target="_blank" title="Instagram">
+        <img src="/images/icon-instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://github.com/zenorocha" target="_blank" title="GitHub">
+        <img src="/images/icon-github.svg" alt="GitHub">
+      </a>
+    </div>
+  </header>
+  <main class="post">
+    <div class="post-content post-article">
+      <div class="post-container">
+          <h1 class="post-title">Introducing WeDeploy</h1>
+          <h2 class="post-subtitle">Aug 09, 2017</h2>
+
+        <p><a href="/apresentando-wedeploy">*Read in Portuguese</a>*</p>
+<p><img src="https://cdn-images-1.medium.com/max/2400/1*W529TFRIga0fGFra4v29kw.jpeg" alt=""></p>
+<p>Two years ago <a href="https://twitter.com/eduardolundgren">Eduardo</a> and I decided to start something new.</p>
+<p>At that time, we had built some popular libraries together and we thought we could try something more ambitious.</p>
+<p>We didn’t know exactly what would that be, but we had a vision. We wanted to <strong>create something that would make developers more productive.</strong></p>
+<p>The thing is, we didn’t want to leave <a href="https://www.liferay.com">Liferay</a> to pursue that vision, so we started to stay until late at the office and work on a prototype.</p>
+<p>That prototype was called <em>Launchpad</em>, we showed it to some people internally and gained support to work more on it.</p>
+<p><img src="https://cdn-images-1.medium.com/max/5760/1*r4tqGjg_7Ub7I4XDdAq1dA.png" alt="Launchpad Developer Preview (2015)"></p>
+<p>Few months later we validated with real users and we noticed that there were many pieces missing. The result was not what we were looking for.</p>
+<p>So we sat down again, now with a more clear goal in mind. We came up with new features, new interface, and new branding.</p>
+<p>We launched the first alpha version last year. We showed it at few exclusive Liferay conferences and got more than 1,000 users. Things were getting real.</p>
+<p><img src="https://cdn-images-1.medium.com/max/5760/1*_SKGU-tsAOoRf6Sz8cgUcw.png" alt="Presenting WeDeploy Alpha at Liferay DevCon (Germany, 2016)"></p>
+<p>Today we’re finally launching the beta version. Until now we were quiet about it, but now I can finally share publicly what I’ve been working on.</p>
+<p><strong>Without further ado, I present you <a href="https://wedeploy.com">WeDeploy</a>.</strong></p>
+<p>We want developers to dedicate their time to what really matters: building awesome apps. That&#39;s why we’re so excited for you to try this new platform.</p>
+<p>You can use it in many different ways. You can deploy a <a href="https://wedeploy.com/docs/deploy/deploying-nodejs/">Node.js</a>, <a href="https://wedeploy.com/docs/deploy/deploying-ruby/">Ruby</a> or <a href="https://wedeploy.com/docs/deploy/deploying-java/">Java</a> app. You can deploy static files (think of GitHub Pages but faster). You can deploy a <a href="https://wedeploy.com/docs/deploy/deploying-docker/">Dockerfile</a> and we automatically build it for you.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4DVTd-3dBs7qVClDsVEYfQ.gif" alt="An example of Wordpress and MySQL database on WeDeploy"></p>
+<p>You can also deploy and use one of our services like <a href="https://wedeploy.com/docs/auth/getting-started/">WeDeploy Auth</a> to authenticate users, <a href="https://wedeploy.com/docs/data/getting-started/">WeDeploy Data</a> to save and consume data in real-time, and <a href="https://wedeploy.com/docs/email/getting-started/">WeDeploy Email</a> to send emails asynchronously.</p>
+<p>Basically, we&#39;re trying to combine everything that makes developers productive into one single platform.</p>
+<p>Now you might be thinking: *&quot;sounds cool, <strong>but how much does it cost?&quot;*</strong></p>
+<p>Since we&#39;re still in beta, <strong>everything is free</strong>. Our goal is for you to try it out, so we can get feedback and improve the platform. Once it&#39;s fully stable, we&#39;ll introduce pricing plans, but for <strong>those who join now it will remain free</strong>.</p>
+<p>So go ahead, create an account, and <a href="https://console.wedeploy.com">try it out</a>!</p>
+<p>We can&#39;t wait to see what you&#39;re going to build :)</p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+</html>
